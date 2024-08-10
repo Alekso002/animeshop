@@ -1,4 +1,15 @@
 .root {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+  ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
   li {
     display: inline-block;
 
@@ -7,15 +18,15 @@
       width: 45px;
       line-height: 42px;
       height: 40px;
-      border: 1px solid #fe5f1e;
+      border: 1px solid #ff69b4;
       border-radius: 30px;
       margin-left: 10px;
       cursor: pointer;
       display: inline-block;
-      color: #fe5f1e;
+      color: #ff69b4;
 
       &:hover {
-        background-color: #fe5f1e;
+        background-color: #ff69b4;
         color: #fff;
       }
     }
@@ -24,7 +35,7 @@
   :global {
     .selected {
       a {
-        background-color: #fe5f1e;
+        background-color: #ff69b4;
         color: #fff;
       }
     }

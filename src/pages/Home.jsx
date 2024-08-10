@@ -4,8 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 import { setItems } from '../redux/slices/pizzaSlice';
-import { Link } from 'react-router-dom';
-
 import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
 import Sort from '../components/Sort';
 import Categories from '../components/Categories';
@@ -21,10 +19,10 @@ const Home = () => {
   const categoryId = useSelector((state) => state.filter.categoryId);
   const sortType = useSelector((state) => state.filter.sort.sortProperty);
   const items = useSelector((state) => state.pizza.items);
-
   const { searchValue } = React.useContext(SearchContext);
 
   const [isLoading, setIsLoading] = React.useState(true);
+  const [totalPages, setTotalPages] = React.useState(0); // Состояние для количества страниц
 
   const onChangePage = (number) => {
     dispatch(setCurrentPage(number));
@@ -35,25 +33,40 @@ const Home = () => {
   };
 
   React.useEffect(() => {
+    // Сбрасываем currentPage на 1 при смене категории
+    dispatch(setCurrentPage(1));
+  }, [categoryId, dispatch]);
+
+  React.useEffect(() => {
     setIsLoading(true);
 
-    const order = sortType.includes('-') ? 'asc' : 'desc';
-    const sortBy = sortType.replace('-', '');
+    const price = sortType.includes('-') ? 'price' : '-price';
+    const title = sortType.includes('-') ? '-title' : 'title';
+    const API_BASE_URL = 'https://e89850b9c98b02ad.mokky.dev';
 
     axios
       .get(
-        `https://667804f70bd45250561d3b17.mockapi.io/Items?page=${currentPage}&limit=4&${
+        `${API_BASE_URL}/Items?page=${currentPage}&limit=4&${
           categoryId > 0 ? `category=${categoryId}` : ''
-        }&sortBy=${sortBy}&order=${order}`,
+        }&sortBy=${sortType.includes('title') ? title : price}`,
       )
       .then((res) => {
-        dispatch(setItems(res.data));
+        console.log('API Response:', res.data);
+
+        if (Array.isArray(res.data.items)) {
+          dispatch(setItems(res.data.items));
+          const totalPages = res.data.meta.total_pages; // Используем total_pages из метаданных
+          setTotalPages(totalPages); // Устанавливаем количество страниц
+        } else {
+          console.error('Unexpected response structure:', res.data);
+          dispatch(setItems([]));
+        }
+
         setIsLoading(false);
       })
-
       .catch((err) => {
         setIsLoading(false);
-        alert('GG');
+        alert('Error fetching items');
       });
 
     window.scrollTo(0, 0);
@@ -61,23 +74,16 @@ const Home = () => {
 
   React.useEffect(() => {
     const queryString = qs.stringify({ sortType, categoryId, currentPage });
-
     navigate(`?${queryString}`);
   }, [categoryId, sortType, currentPage]);
 
-  const pizzas = items
-    .filter((obj) => {
-      if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
-        return true;
-      }
-
-      return false;
-    })
-    .map((obj) => <PizzaBlock key={obj.id} {...obj} image={obj.imageUrl} />);
+  const pizzas = Array.isArray(items)
+    ? items
+        .filter((obj) => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
+        .map((obj) => <PizzaBlock key={obj.id} {...obj} image={obj.imageUrl} />)
+    : [];
 
   const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
-
-  React.useEffect(() => {}, [items]);
 
   return (
     <div className="container">
@@ -85,9 +91,14 @@ const Home = () => {
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">Figurki i Gadżety Anime / Manga</h2>
       <div className="content__items">{isLoading ? skeletons : pizzas}</div>
-      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
+      <Pagination
+        currentPage={currentPage}
+        onChangePage={onChangePage}
+        pageCount={totalPages}
+      />{' '}
+      {/* Передаем количество страниц */}
     </div>
   );
 };

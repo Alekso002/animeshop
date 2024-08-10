@@ -9,12 +9,10 @@ function Sort() {
 
   const [open, setOpen] = React.useState(false);
   const list = [
-    { name: 'популярности(DESC)', sortProperty: 'rating' },
-    { name: 'популярности(ASC)', sortProperty: '-rating' },
-    { name: 'цене(DESC)', sortProperty: 'price' },
-    { name: 'цене(ASC)', sortProperty: '-price' },
-    { name: 'алфавиту(DESC)', sortProperty: 'title' },
-    { name: 'алфавиту(ASC)', sortProperty: '-title' },
+    { name: 'od najwyższej ceny', sortProperty: 'price' },
+    { name: 'od najniższej ceny', sortProperty: '-price' },
+    { name: 'nazwa produktu od A do Z', sortProperty: 'title' },
+    { name: 'nazwa produktu od Z do A', sortProperty: '-title' },
   ];
 
   const onClickListItem = (obj) => {
@@ -51,7 +49,7 @@ function Sort() {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Сортировка по:</b>
+        <b>Sortuj:</b>
         <span onClick={() => setOpen(!open)}>{sort.name}</span>
       </div>
       {open && (

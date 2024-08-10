@@ -4,7 +4,7 @@ const initialState = {
   categoryId: 0,
   currentPage: 1,
   sort: {
-    name: 'популярности',
+    name: 'od najwyższej ceny',
     sortProperty: 'rating',
   },
 };

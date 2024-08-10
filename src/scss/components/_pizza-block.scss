@@ -4,6 +4,10 @@
   width: 280px;
   text-align: center;
   margin-bottom: 65px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 
   &-wrapper {
     display: flex;
@@ -12,7 +16,9 @@
 
   &__image {
     width: 260px;
-    height: 180px;
+    height: 260px;
+    border: 3px solid #ff69b4;
+    border-radius: 10px;
   }
 
   &__title {
@@ -45,7 +51,7 @@
         font-size: 14px;
         @include noselect();
         &.active {
-          background: #ffffff;
+          background: #e6e6fa;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
           border-radius: 5px;
           cursor: auto;
@@ -66,5 +72,6 @@
     font-size: 22px;
     line-height: 27px;
     letter-spacing: 0.015em;
+    margin-left: 20px;
   }
 }

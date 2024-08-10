@@ -10,10 +10,12 @@ const FullPizza = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const API = 'https://e89850b9c98b02ad.mokky.dev';
+
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const { data } = await axios.get('https://667804f70bd45250561d3b17.mockapi.io/Items/' + id);
+        const { data } = await axios.get(`${API}/Items/${id}`);
         setPizza(data);
       } catch (error) {
         alert('Nie ma pitsy!');

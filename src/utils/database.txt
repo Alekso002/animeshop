@@ -1,0 +1,567 @@
+{
+  "id": 0,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/kaguya.webp",
+        "title": "Kaguya Shinomiya",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 800,
+        "category": 0,
+        "rating": 4,
+        "description": "Пицца с традиционными пепперони, дополненными свежим болгарским перцем. Совершенное сочетание пикантности и свежести"
+    },
+    {
+        "id": 1,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/asuna.webp",
+        "title": "Asuna Yuuki",
+        "types": [
+            0
+        ],
+        "sizes": [
+            26,
+            40
+        ],
+        "price": 700,
+        "category": 0,
+        "rating": 4,
+        "description": "Пицца, обильно покрытая несколькими видами сыра, таких как моцарелла, чеддер и пармезан. Настоящий рай для любителей сыра."
+    },
+    {
+        "id": 2,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/maomao.webp",
+        "title": "Maomao",
+        "types": [
+            0
+        ],
+        "sizes": [
+            26,
+            40
+        ],
+        "price": 600,
+        "category": 1,
+        "rating": 4,
+        "description": "Пицца с кусочками цыпленка в соусе барбекю, красным луком и копченым сыром. Пряный и сладкий вкус, который привлекает любителей барбекю."
+    },
+    {
+        "id": 3,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/ai.webp",
+        "title": "Ai Hoshino",
+        "types": [
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 500,
+        "category": 2,
+        "rating": 2,
+        "description": "Пицца с кусочками цыпленка в кисло-сладком соусе, ананасами и болгарским перцем. Экзотическое и освежающее сочетание для любителей необычных вкусов."
+    },
+    {
+        "id": 4,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/akame.webp",
+        "title": "Akame",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 415,
+        "category": 3,
+        "rating": 8,
+        "description": "Пицца с говяжьим фаршем, маринованными огурчиками, луком и сыром, напоминающая вкус классического чизбургера. Идеальный выбор для любителей фастфуда."
+    },
+    {
+        "id": 5,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/akashi.webp",
+        "title": "Akashi Seijuro",
+        "types": [
+            0
+        ],
+        "sizes": [
+            30,
+            40
+        ],
+        "price": 480,
+        "category": 2,
+        "rating": 2,
+        "description": "Пицца с двойной порцией острой колбасы пепперони и дополнительными специями. Идеальна для тех, кто любит интенсивные и насыщенные вкусы."
+    },
+    {
+        "id": 6,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/midorima.webp",
+        "title": "Midorima Shintaro",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 475,
+        "category": 1,
+        "rating": 9,
+        "description": "Пицца с пикантной колбасой пепперони, обильно покрытая растопленным сыром. Любимая классика для тех, кто ценит острые и насыщенные вкусы."
+    },
+    {
+        "id": 7,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/kise.webp",
+        "title": "Kise Ryota",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 450,
+        "category": 4,
+        "rating": 10,
+        "description": "Классическая пицца с томатным соусом, свежими помидорами и базиликом, посыпанная моцареллой. Идеальное сочетание простоты и вкуса."
+    },
+    {
+        "id": 8,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/aomine.webp",
+        "title": "Aoimine Daiki",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 395,
+        "category": 5,
+        "rating": 10,
+        "description": "Пицца, разделенная на четыре секции, каждая из которых представляет разные ингредиенты: грибы, артишоки, ветчина и оливки. Вкусное путешествие через все времена года."
+    },
+    {
+        "id": 9,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/murasakibara.webp",
+        "title": "Murasakibara Atsushi",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },
+    {
+        "id": 10,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/tetsuya.webp",
+        "title": "Tetsuya Kuroko",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 11,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/tajga.webp",
+        "title": "Taiga Kagami",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 12,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/akeno.webp",
+        "title": "Akeno Himejima",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 13,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/rias.webp",
+        "title": "Rias Gremory",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },
+    {
+        "id": 14,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/asia.webp",
+        "title": "Asia Argento",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 15,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/issei.webp",
+        "title": "Issei Hyoudou",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 16,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/koneko.webp",
+        "title": "Koneko Toujou",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 17,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/kadzuma.webp",
+        "title": "Kazuma Satou",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id":18,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/megumin.webp",
+        "title": "Megumin",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 19,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/aqua.webp",
+        "title": "Aqua",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 20,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/darkness.webp",
+        "title": "Darkness",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 21,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/cosette.webp",
+        "title": "Cosette Schneider",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 22,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/emilia.webp",
+        "title": "Emilia",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 23,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/rem.webp",
+        "title": "Rem",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 24,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/ram.webp",
+        "title": "Ram",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 25,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/frieren.webp",
+        "title": "Frieren",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 26,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/mashiro.webp",
+        "title": "Siina Mashiro",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 27,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/nagatoro.webp",
+        "title": "Hayase Nagatoro",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 28,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/saber.webp",
+        "title": "Saber",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 29,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/siina.webp",
+        "title": "Siina Mashiro",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 30,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/taiga.webp",
+        "title": "Taiga Aisaka",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 31,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/tomoe.webp",
+        "title": "Tomoe",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },
+    {
+        "id": 32,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/mai.webp",
+        "title": "Mai Sakurajima",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    }
