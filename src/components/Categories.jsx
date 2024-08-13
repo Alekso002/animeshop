@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Categories({ value, onChangeCategory }) {
-  const categories = ['Wszystko', 'Figurki', 'Plakaty', 'Cosplay', 'Manga', 'Maskotki'];
+  const categories = ['Wszystko', 'Figurki', 'Plakaty', 'Manga', 'PC', 'Maskotki'];
 
   return (
     <div className="categories">
