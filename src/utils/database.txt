@@ -1025,7 +1025,7 @@
         "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
     },{
         "id": 60,
-        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/RTX%232.webp,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/RTX%232.webp",
         "title": "Nvidia RTX 4090 #2",
         "types": [
             0,
@@ -1059,7 +1059,7 @@
         "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
     },{
         "id": 62,
-        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/RTX%234.webp"",
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/RTX%234.webp",
         "title": "Nvidia RTX 4090 #4",
         "types": [
             0,
@@ -1178,8 +1178,8 @@
         "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
     },{
         "id": 69,
-        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/Frieren%233.webp",
-        "title": "Frieren Tom 3",
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/key%231.webp",
+        "title": "Keycaps",
         "types": [
             0,
             1
@@ -1191,6 +1191,431 @@
         ],
         "price": 285,
         "category": 4,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 70,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/board%231.webp",
+        "title": "Klawiatura #1",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 4,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 71,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/board%232.webp",
+        "title": "Klawiatura #2",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 4,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 72,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/board%233.webp",
+        "title": "Klawiatura #3",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 4,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 73,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%231.webp",
+        "title": "Etui Iphone #1",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 74,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%232.webp",
+        "title": "Etui Iphone #2",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 75,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%233.webp",
+        "title": "Etui Iphone #3",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 76,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%234.webp",
+        "title": "Etui Iphone #4",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 77,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%235.webp",
+        "title": "Etui Iphone #5",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 78,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%236.webp",
+        "title": "Etui Iphone #6",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 79,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%237.webp",
+        "title": "Etui Iphone #7",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 80,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/case%238.webp",
+        "title": "Etui Iphone #8",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 81,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%231.webp",
+        "title": "Bluza z kapturem #1",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 82,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%232.webp",
+        "title": "Bluza z kapturem #2",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 83,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%233.webp",
+        "title": "Bluza z kapturem #3",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 84,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%234.webp",
+        "title": "Bluza z kapturem #4",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 85,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%235.webp",
+        "title": "Bluza z kapturem #5",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 86,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%236.webp",
+        "title": "Bluza z kapturem #6",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 87,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%237.webp",
+        "title": "Bluza z kapturem #7",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 88,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/hoodie%238.webp",
+        "title": "Bluza z kapturem #8",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 89,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/t-shirt%231.webp",
+        "title": "T-shirt #1",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 90,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/t-shirt%232.webp",
+        "title": "T-shirt #2",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 91,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/t-shirt%233.webp",
+        "title": "T-shirt #3",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 92,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/t-shirt%234.webp",
+        "title": "T-shirt #4",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 93,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/t-shirt%235.webp",
+        "title": "T-shirt #5",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
+        "rating": 7,
+        "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
+    },{
+        "id": 94,
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/t-shirt%236.webp",
+        "title": "T-shirt #6",
+        "types": [
+            0,
+            1
+        ],
+        "sizes": [
+            26,
+            30,
+            40
+        ],
+        "price": 285,
+        "category": 5,
         "rating": 7,
         "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
     }
