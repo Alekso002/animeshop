@@ -85,13 +85,24 @@ const Home = () => {
 
   const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
 
+  const titles = {
+    0: 'Figurki i Gadżety Anime / Manga',
+    1: 'Figurki',
+    2: 'Plakaty',
+    3: 'Manga',
+    4: 'PC',
+    5: 'Inne',
+  };
+
+  const title = titles[categoryId];
+
   return (
     <div className="container">
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort />
       </div>
-      <h2 className="content__title">Figurki i Gadżety Anime / Manga</h2>
+      <h2 className="content__title">{title}</h2>
       <div className="content__items">{isLoading ? skeletons : pizzas}</div>
       <Pagination
         currentPage={currentPage}

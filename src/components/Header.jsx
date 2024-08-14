@@ -1,5 +1,5 @@
 import React from 'react';
-import logoSvg from '../assets/img/logo.svg';
+import logoSvg from '../assets/img/logo.png';
 import { Link } from 'react-router-dom';
 import Search from './Search/Index';
 import { useSelector } from 'react-redux';
@@ -14,7 +14,7 @@ function Header() {
       <div className="container">
         <Link to="/">
           <div className="header__logo">
-            <img width="38" src={logoSvg} alt="Pizza logo" />
+            <img width="80" src={logoSvg} alt="Anime logo" />
             <div>
               <h1>Frieren</h1>
               <p>najlepszy sklep dla fanów anime</p>
