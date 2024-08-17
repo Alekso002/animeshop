@@ -4,21 +4,47 @@ import { Link } from 'react-router-dom';
 
 import { addItem } from '../../redux/slices/cartSlice';
 
-const typeNames = ['тонкое', 'традиционное'];
+const typeNames = [
+  'тонкое',
+  'традиционное',
+  'S',
+  'L',
+  'XL',
+  'miękka',
+  'twarda',
+  '4gb',
+  '8gb',
+  '16gb',
+  '4070',
+  '4080',
+  '4090',
+  'cherry',
+  'sa',
+  'oem',
+  'mechanical',
+  'membrane',
+  '12',
+  '12 pro',
+  '12 pro max',
+];
 
-function PizzaBlock({ id, title, price, image, sizes, types }) {
+function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
   const dispatch = useDispatch();
   const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
-  const [activeType, setActiveType] = React.useState(0);
+
+  const [activeType, setActiveType] = React.useState(types[0] || 0);
   const [activeSize, setActiveSize] = React.useState(0);
 
   const addedCount = cartItem ? cartItem.count : 0;
+
+  // Определяем текущую цену в зависимости от категории
+  const currentPrice = category === 1 ? prices[activeSize] : prices[types.indexOf(activeType)];
 
   const onClickAdd = () => {
     const item = {
       id,
       title,
-      price,
+      price: currentPrice,
       image,
       type: typeNames[activeType],
       size: sizes[activeSize],
@@ -30,8 +56,7 @@ function PizzaBlock({ id, title, price, image, sizes, types }) {
     <div className="pizza-block-wrapper">
       <div className="pizza-block">
         <Link to={`/pizza/` + id}>
-          <img className="pizza-block__image" src={image} alt="Pizza" />
-
+          <img className="pizza-block__image" src={image} alt="Photo" />
           <h4 className="pizza-block__title">{title}</h4>
         </Link>
         <div className="pizza-block__selector">
@@ -45,19 +70,21 @@ function PizzaBlock({ id, title, price, image, sizes, types }) {
               </li>
             ))}
           </ul>
-          <ul>
-            {sizes.map((size, i) => (
-              <li
-                key={size}
-                onClick={() => setActiveSize(i)}
-                className={activeSize === i ? 'active' : ''}>
-                {size} cm
-              </li>
-            ))}
-          </ul>
+          {sizes.length > 0 && (
+            <ul>
+              {sizes.map((size, i) => (
+                <li
+                  key={size}
+                  onClick={() => setActiveSize(i)}
+                  className={activeSize === i ? 'active' : ''}>
+                  {size} cm
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">от {price} $</div>
+          <div className="pizza-block__price"> {currentPrice} zł</div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"

@@ -39,8 +39,8 @@ const FullPizza = () => {
         <h2>{pizza.title}</h2>
       </div>
       <h2>{pizza.description}</h2>
-      <h4>{pizza.price} $</h4>
-      <Link to="/" class="button button--black">
+      <h4>{pizza.price1} $</h4>
+      <Link to="/" className="button button--orange">
         <span>Вернуться назад</span>
       </Link>
     </div>

@@ -306,14 +306,14 @@ body {
       width: 4%;
 
       .button {
-        border-color: darken($color: $gray-line, $amount: 10);
+        border-color: #ff69b4;
       }
 
       svg {
         transform: rotate(45deg);
 
         path {
-          fill: darken($color: $gray-line, $amount: 15);
+          fill: #ff69b4;
         }
       }
 
@@ -326,8 +326,8 @@ body {
 
         &:hover,
         &:active {
-          border-color: darken($color: $gray-line, $amount: 80);
-          background-color: darken($color: $gray-line, $amount: 80);
+          border-color: #ff69b4;
+          background-color: #ff69b4;
         }
       }
     }
@@ -488,20 +488,20 @@ body {
         justify-content: center;
         width: 210px;
 
-        border-color: darken($color: $gray-line, $amount: 10);
+        border-color: #ff69b4;
 
         span {
-          color: darken($color: $gray-line, $amount: 20);
+          color: #ff69b4;
           font-weight: 500;
           font-weight: 600;
         }
 
         &:hover {
-          background-color: darken($color: $gray-line, $amount: 90);
-          border-color: darken($color: $gray-line, $amount: 90);
+          background-color: #ff69b4;
+          border-color: #ff69b4;
 
           span {
-            color: $gray-line;
+            color: #f9f9f9;
           }
         }
 
@@ -545,7 +545,7 @@ body {
       margin: 45px auto 60px;
     }
 
-    .button--black {
+    .button--orange {
       padding: 12px 0 14px;
       width: 230px;
       margin: 0 auto;
@@ -572,7 +572,7 @@ body {
         margin: 30px auto 50px;
       }
 
-      .button--black {
+      .button--orange {
         width: 200px;
         font-size: 16px;
       }
@@ -594,7 +594,7 @@ body {
         margin: 20px auto 40px;
       }
 
-      .button--black {
+      .button--orange {
         width: 180px;
         font-size: 14px;
       }

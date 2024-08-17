@@ -40,7 +40,7 @@ const Home = () => {
   React.useEffect(() => {
     setIsLoading(true);
 
-    const price = sortType.includes('-') ? 'price' : '-price';
+    const price = sortType.includes('-') ? 'price1' : '-price1';
     const title = sortType.includes('-') ? '-title' : 'title';
     const API_BASE_URL = 'https://e89850b9c98b02ad.mokky.dev';
 
@@ -80,7 +80,14 @@ const Home = () => {
   const pizzas = Array.isArray(items)
     ? items
         .filter((obj) => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
-        .map((obj) => <PizzaBlock key={obj.id} {...obj} image={obj.imageUrl} />)
+        .map((obj) => (
+          <PizzaBlock
+            key={obj.id}
+            {...obj}
+            image={obj.imageUrl}
+            prices={[obj.price1, obj.price2, obj.price3]}
+          />
+        ))
     : [];
 
   const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);

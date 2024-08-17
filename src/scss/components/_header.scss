@@ -11,8 +11,9 @@
     flex-wrap: wrap;
 
     @media (max-width: 645px) {
-      flex-direction: column-reverse;
+      flex-direction: column;
       text-align: center;
+      padding: 10px;
 
       .header__cart {
         margin-bottom: 20px;
@@ -23,6 +24,7 @@
   &__logo {
     display: flex;
     align-items: center;
+    justify-content: center; // Центрируем логотип на мобильных устройствах
     margin-bottom: 10px;
 
     img {
@@ -47,12 +49,16 @@
     @media (max-width: 645px) {
       flex-direction: column;
       align-items: center;
+      justify-content: center; // Центрируем логотип и текст под ним
+      text-align: center;
     }
   }
 
   &__search {
     display: flex;
     align-items: center;
+    justify-content: center; // Центрируем поле поиска
+
     input {
       width: 100%;
       padding: 10px;
@@ -73,6 +79,7 @@
   .header__cart {
     display: flex;
     align-items: center;
+    justify-content: flex-end; // Выравниваем корзину по правому краю на больших экранах
 
     @media (max-width: 645px) {
       justify-content: center;
