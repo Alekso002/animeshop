@@ -1,12 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import { addItem } from '../../redux/slices/cartSlice';
 
 const typeNames = [
-  'тонкое',
-  'традиционное',
+  'figurka',
+  'x',
   'S',
   'L',
   'XL',
@@ -30,15 +29,22 @@ const typeNames = [
 
 function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
   const dispatch = useDispatch();
-  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
 
   const [activeType, setActiveType] = React.useState(types[0] || 0);
   const [activeSize, setActiveSize] = React.useState(0);
 
-  const addedCount = cartItem ? cartItem.count : 0;
-
   // Определяем текущую цену в зависимости от категории
   const currentPrice = category === 1 ? prices[activeSize] : prices[types.indexOf(activeType)];
+
+  // Приведение активного типа к строке для корректного сравнения
+  const cartItem = useSelector((state) =>
+    state.cart.items.find(
+      (obj) =>
+        obj.id === id && obj.type === typeNames[activeType] && obj.size === sizes[activeSize],
+    ),
+  );
+
+  const addedCount = cartItem ? cartItem.count : 0;
 
   const onClickAdd = () => {
     const item = {
@@ -55,7 +61,7 @@ function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
   return (
     <div className="pizza-block-wrapper">
       <div className="pizza-block">
-        <Link to={`/pizza/` + id}>
+        <Link to={`/pizza/${id}`}>
           <img className="pizza-block__image" src={image} alt="Photo" />
           <h4 className="pizza-block__title">{title}</h4>
         </Link>
@@ -84,7 +90,7 @@ function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
           )}
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price"> {currentPrice} zł</div>
+          <div className="pizza-block__price">{currentPrice} zł</div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"
@@ -97,8 +103,8 @@ function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
                 fill="white"
               />
             </svg>
-            <span>Добавить</span>
-            {addedCount > 0 && <i>{addedCount} </i>}
+            <span>Dodać</span>
+            {addedCount > 0 && <i>{addedCount}</i>}
           </button>
         </div>
       </div>

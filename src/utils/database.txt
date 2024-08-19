@@ -311,7 +311,7 @@
         "description": "Вегетарианская пицца с разнообразными овощами и ароматными грибами. Легкий и полезный вариант с богатым вкусом."
     },{
         "id": 17,
-        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/kadzuma.webp",
+        "imageUrl": "https://animeshop.s3.eu-north-1.amazonaws.com/kazuma.webp",
         "title": "Kazuma Satou",
         "types": [
             
@@ -1222,7 +1222,7 @@
         "sizes": [
             
         ],
-        "bprice": 1000,
+        "price1": 1000,
         "price2": 1500,
         "price3": 2000,
         "category": 4,

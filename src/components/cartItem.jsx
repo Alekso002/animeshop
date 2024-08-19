@@ -10,35 +10,36 @@ const CartItem = ({ id, title, type, size, price, count, image }) => {
     dispatch(
       addItem({
         id,
+        type,
+        size,
       }),
     );
   };
 
   const onClickMinus = () => {
-    if (count > 0) {
-      dispatch(minusItem(id));
-    }
-
-    if (count == 1) {
-      dispatch(removeItem(id));
+    if (count > 1) {
+      dispatch(minusItem({ id, type, size }));
+    } else if (window.confirm('Are you sure you want to remove items?')) {
+      dispatch(removeItem({ id, type, size }));
     }
   };
 
   const onClickRemove = () => {
-    if (window.confirm('Are you sure you want to remove?')) {
-      dispatch(removeItem(id));
+    if (window.confirm('Are you sure you want to remove items?')) {
+      dispatch(removeItem({ id, type, size }));
     }
   };
 
   return (
     <div className="cart__item">
       <div className="cart__item-img">
-        <img className="pizza-block__image" src={image} alt="Pizza" />
+        <img className="pizza-block__image" src={image} alt="Photo" />
       </div>
       <div className="cart__item-info">
         <h3>{title}</h3>
         <p>
-          {type}, {size} см.
+          {type && <p>{type}</p>}
+          {size && <p> {size} cm</p>}
         </p>
       </div>
       <div className="cart__item-count">
@@ -83,7 +84,7 @@ const CartItem = ({ id, title, type, size, price, count, image }) => {
         </div>
       </div>
       <div className="cart__item-price">
-        <b>{price * count} $</b>
+        <b>{price * count} zł</b>
       </div>
       <div className="cart__item-remove">
         <div onClick={onClickRemove} className="button button--outline button--circle">

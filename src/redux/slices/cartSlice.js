@@ -10,7 +10,12 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem(state, action) {
-      const findItem = state.items.find((obj) => obj.id === action.payload.id);
+      const findItem = state.items.find(
+        (obj) =>
+          obj.id === action.payload.id &&
+          obj.type === action.payload.type &&
+          obj.size === action.payload.size,
+      );
       if (findItem) {
         findItem.count++;
       } else {
@@ -25,10 +30,14 @@ export const cartSlice = createSlice({
       }, 0);
     },
     minusItem(state, action) {
-      //state.items = state.items.filter((obj) => obj.count !== 0);
-      const findItem = state.items.find((obj) => obj.id === action.payload);
+      const findItem = state.items.find(
+        (obj) =>
+          obj.id === action.payload.id &&
+          obj.type === action.payload.type &&
+          obj.size === action.payload.size,
+      );
 
-      if (findItem) {
+      if (findItem && findItem.count > 0) {
         findItem.count--;
       }
 
@@ -36,14 +45,28 @@ export const cartSlice = createSlice({
         return obj.price * obj.count + sum;
       }, 0);
     },
-
     removeItem(state, action) {
-      state.items = state.items.filter((obj) => obj.id !== action.payload);
+      console.log('Before removal:', state.items);
+      console.log('Trying to remove item:', action.payload);
+
+      state.items = state.items.filter((obj) => {
+        const isMatching =
+          obj.id === action.payload.id &&
+          obj.type === action.payload.type &&
+          obj.size === action.payload.size;
+        if (isMatching) {
+          console.log('Removing item:', obj);
+        }
+        return !isMatching;
+      });
+
+      console.log('After removal:', state.items);
 
       state.totalPrice = state.items.reduce((sum, obj) => {
         return obj.price * obj.count + sum;
       }, 0);
     },
+
     clearItem(state) {
       state.items = [];
       state.totalPrice = 0;
