@@ -28,9 +28,6 @@
       &:hover {
         background-color: #ff69b4;
         color: #fff;
-
-        $ui-mouse-device: '(any-hover: hover) and (any-pointer: fine)';
-        $ui-touch-device: '(any-hover: none) and (any-pointer: coarse)';
       }
     }
   }
@@ -41,6 +38,20 @@
         background-color: #ff69b4;
         color: #fff;
       }
+    }
+  }
+}
+$ui-touch-device: '(any-hover: none) and (any-pointer: coarse)';
+
+/* Стили для сенсорных устройств */
+@media #{$ui-touch-device} {
+  .root ul li a {
+    touch-action: manipulation; /* Это предотвратит возможные проблемы с жестами */
+    user-select: none; /* Отключает выделение текста при долгом нажатии */
+
+    &:active {
+      background-color: #ff69b4;
+      color: #fff;
     }
   }
 }
