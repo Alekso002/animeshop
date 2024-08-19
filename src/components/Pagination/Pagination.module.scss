@@ -28,6 +28,9 @@
       &:hover {
         background-color: #ff69b4;
         color: #fff;
+
+        $ui-mouse-device: '(any-hover: hover) and (any-pointer: fine)';
+        $ui-touch-device: '(any-hover: none) and (any-pointer: coarse)';
       }
     }
   }
