@@ -12,7 +12,7 @@ const Cart = () => {
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
   const onClickClear = () => {
-    if (window.confirm('Are you sure you want to clear?')) {
+    if (window.confirm('Are you sure you want to clear all?')) {
       dispatch(clearItem());
     }
   };
@@ -93,7 +93,7 @@ const Cart = () => {
               />
             </svg>
 
-            <span>Opróżnij koszyk</span>
+            <span>Wyczyść koszyk</span>
           </div>
         </div>
         <div className="content__items">

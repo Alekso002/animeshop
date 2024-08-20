@@ -27,7 +27,7 @@ const typeNames = [
   '12 pro max',
 ];
 
-function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
+export function AnimeBlock({ id, title, prices, image, sizes, types, category }) {
   const dispatch = useDispatch();
 
   const [activeType, setActiveType] = React.useState(types[0] || 0);
@@ -59,13 +59,13 @@ function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
   };
 
   return (
-    <div className="pizza-block-wrapper">
-      <div className="pizza-block">
-        <Link to={`/pizza/${id}`}>
-          <img className="pizza-block__image" src={image} alt="Photo" />
-          <h4 className="pizza-block__title">{title}</h4>
+    <div className="anime-block-wrapper">
+      <div className="anime-block">
+        <Link to={`/anime/${id}`}>
+          <img className="anime-block__image" src={image} alt="Photo" />
+          <h4 className="anime-block__title">{title}</h4>
         </Link>
-        <div className="pizza-block__selector">
+        <div className="anime-block__selector">
           <ul>
             {types.map((typeId) => (
               <li
@@ -89,8 +89,8 @@ function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
             </ul>
           )}
         </div>
-        <div className="pizza-block__bottom">
-          <div className="pizza-block__price">{currentPrice} zł</div>
+        <div className="anime-block__bottom">
+          <div className="anime-block__price">{currentPrice} zł</div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"
@@ -112,4 +112,4 @@ function PizzaBlock({ id, title, prices, image, sizes, types, category }) {
   );
 }
 
-export default PizzaBlock;
+export default AnimeBlock;

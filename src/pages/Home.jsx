@@ -3,12 +3,12 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
-import { setItems } from '../redux/slices/pizzaSlice';
+import { setItems } from '../redux/slices/animeSlice';
 import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
 import Sort from '../components/Sort';
 import Categories from '../components/Categories';
-import PizzaBlock from '../components/PizzaBlock';
-import Skeleton from '../components/PizzaBlock/Skeleton';
+import AnimeBlock from '../components/AnimeBlock';
+import Skeleton from '../components/AnimeBlock/Skeleton';
 import Pagination from '../components/Pagination';
 import { SearchContext } from '../App';
 
@@ -18,7 +18,7 @@ const Home = () => {
   const currentPage = useSelector((state) => state.filter.currentPage);
   const categoryId = useSelector((state) => state.filter.categoryId);
   const sortType = useSelector((state) => state.filter.sort.sortProperty);
-  const items = useSelector((state) => state.pizza.items);
+  const items = useSelector((state) => state.anime.items);
   const { searchValue } = React.useContext(SearchContext);
 
   const [isLoading, setIsLoading] = React.useState(true);
@@ -77,11 +77,11 @@ const Home = () => {
     navigate(`?${queryString}`);
   }, [categoryId, sortType, currentPage]);
 
-  const pizzas = Array.isArray(items)
+  const products = Array.isArray(items)
     ? items
         .filter((obj) => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
         .map((obj) => (
-          <PizzaBlock
+          <AnimeBlock
             key={obj.id}
             {...obj}
             image={obj.imageUrl}
@@ -90,7 +90,7 @@ const Home = () => {
         ))
     : [];
 
-  const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
+  const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
 
   const titles = {
     0: 'Figurki i Gadżety Anime / Manga',
@@ -110,7 +110,7 @@ const Home = () => {
         <Sort />
       </div>
       <h2 className="content__title">{title}</h2>
-      <div className="content__items">{isLoading ? skeletons : pizzas}</div>
+      <div className="content__items">{isLoading ? skeletons : products}</div>
       <Pagination
         currentPage={currentPage}
         onChangePage={onChangePage}

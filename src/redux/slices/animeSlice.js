@@ -4,8 +4,8 @@ const initialState = {
   items: [],
 };
 
-export const pizzaSlice = createSlice({
-  name: 'pizza',
+export const animeSlice = createSlice({
+  name: 'anime',
   initialState,
   reducers: {
     setItems(state, action) {
@@ -14,6 +14,6 @@ export const pizzaSlice = createSlice({
   },
 });
 
-export const { setItems } = pizzaSlice.actions;
+export const { setItems } = animeSlice.actions;
 
-export default pizzaSlice.reducer;
+export default animeSlice.reducer;

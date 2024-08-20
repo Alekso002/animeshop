@@ -8,9 +8,9 @@ const CartEmpty = () => {
       <div className="cart cart--empty">
         <h2>Koszyk jest pusty 😕</h2>
         <p>
-          Prawdopodobnie jeszcze nie zamówiłeś pizzy.
+          Prawdopodobnie jeszcze nic nie wybrałeś .
           <br />
-          Aby zamówić pizzę, przejdź na stronę główną.
+          Aby kupić produkt, przejdź na stronę główną.
         </p>
         <img src={CartEmptyImg} alt="Empty cart" />
         <Link to="/" className="button button--orange">

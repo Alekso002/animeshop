@@ -1,0 +1,116 @@
+.full {
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+
+    .content__image {
+      flex: 1;
+      max-width: 60%;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .content__details {
+      flex: 1;
+      max-width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      .anime-block {
+        width: 100%;
+        .anime-block__image {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+
+        .anime-block__title {
+          font-size: 28px;
+          color: #333;
+          margin-bottom: 10px;
+        }
+
+        .anime-block__selector {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 15px;
+
+          ul {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 0;
+
+            li {
+              list-style: none;
+              padding: 10px 20px;
+              background-color: #ecebeb;
+              border-radius: 10px;
+              cursor: pointer;
+              margin: 0 5px;
+              transition: background-color 0.3s;
+
+              &.active {
+                background-color: #ff7f50;
+                color: white;
+              }
+            }
+          }
+        }
+
+        .anime-block__bottom {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &__price {
+            font-size: 24px;
+            color: #e74c3c;
+            font-weight: bold;
+          }
+
+          .button--add {
+            background-color: #ff7f50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+              background-color: #ff6347;
+            }
+
+            svg {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+
+      .button--orange {
+        background-color: #ff7f50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        align-self: flex-start;
+
+        &:hover {
+          background-color: #ff6347;
+        }
+      }
+    }
+  }
+}
