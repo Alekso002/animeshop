@@ -35,7 +35,6 @@ body {
 
 @media (max-width: 768px) {
   .content__title {
-    padding: 15px;
     margin: 30px 15px;
     text-align: center;
 
@@ -68,7 +67,7 @@ body {
 }
 
 .content {
-  padding: 40px 0;
+  padding: 20px 0;
 
   &__title {
     margin: 35px 30px;
@@ -116,6 +115,7 @@ body {
 
       .sort {
         padding-left: 20px;
+        padding-top: 20px;
         b {
           display: none;
         }
@@ -130,14 +130,14 @@ body {
           }
         }
       }
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
 
     @media (max-width: 820px) {
       .categories {
-        margin-top: 30px;
+        margin-top: 20px;
       }
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
 }
@@ -682,6 +682,51 @@ body {
         max-width: 100%; /* Кнопка занимает всю ширину на очень маленьких экранах */
         padding: 10px;
       }
+    }
+  }
+}
+
+.limit-buttons {
+  display: flex;
+  justify-content: center; // Center the buttons horizontally
+  padding-left: 10px;
+
+  button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+    background-color: #f9f9f9;
+    border: 1px solid #ff69b4;
+
+    @include noselect();
+
+    &.active {
+      background-color: #ff69b4;
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap; // Allow the buttons to wrap to the next line if needed
+    button {
+      padding: 8px 16px; // Increase button padding for better touch interaction
+      font-size: 14px; // Adjust font size for readability on smaller screens
+      margin: 5px; // Provide spacing between buttons
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column; // Stack buttons vertically on very small screens
+    align-items: center; // Center the buttons within the container
+    padding-top: 20px;
+    button {
+      width: 100%; // Buttons take full width for better interaction
+      margin-bottom: 10px; // Add space between buttons
+      padding: 10px 20px; // Increase padding for easier touch interaction
+      font-size: 16px; // Increase font size for better readability
     }
   }
 }

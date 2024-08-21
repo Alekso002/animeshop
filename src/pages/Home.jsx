@@ -23,6 +23,7 @@ const Home = () => {
 
   const [isLoading, setIsLoading] = React.useState(true);
   const [totalPages, setTotalPages] = React.useState(0); // Состояние для количества страниц
+  const [limit, setLimit] = React.useState(4); // Состояние для лимита элементов на странице
 
   const onChangePage = (number) => {
     dispatch(setCurrentPage(number));
@@ -32,10 +33,19 @@ const Home = () => {
     dispatch(setCategoryId(id));
   };
 
+  const handleLimitChange = (newLimit) => {
+    setLimit(newLimit);
+  };
+
   React.useEffect(() => {
     // Сбрасываем currentPage на 1 при смене категории
     dispatch(setCurrentPage(1));
   }, [categoryId, dispatch]);
+
+  React.useEffect(() => {
+    // Сбрасываем currentPage на 1 при смене sort
+    dispatch(setCurrentPage(1));
+  }, [sortType, dispatch]);
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -46,7 +56,7 @@ const Home = () => {
 
     axios
       .get(
-        `${API_BASE_URL}/Items?page=${currentPage}&limit=4&${
+        `${API_BASE_URL}/Items?page=${currentPage}&limit=${limit}&${
           categoryId > 0 ? `category=${categoryId}` : ''
         }&sortBy=${sortType.includes('title') ? title : price}`,
       )
@@ -70,12 +80,12 @@ const Home = () => {
       });
 
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, searchValue, currentPage]);
+  }, [categoryId, sortType, searchValue, currentPage, limit]);
 
   React.useEffect(() => {
-    const queryString = qs.stringify({ sortType, categoryId, currentPage });
+    const queryString = qs.stringify({ sortType, categoryId, currentPage, limit });
     navigate(`?${queryString}`);
-  }, [categoryId, sortType, currentPage]);
+  }, [categoryId, sortType, currentPage, limit]);
 
   const products = Array.isArray(items)
     ? items
@@ -90,7 +100,7 @@ const Home = () => {
         ))
     : [];
 
-  const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
+  const skeletons = [...new Array(limit)].map((_, index) => <Skeleton key={index} />);
 
   const titles = {
     0: 'Figurki i Gadżety Anime / Manga',
@@ -107,16 +117,19 @@ const Home = () => {
     <div className="container">
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
+        <div className="limit-buttons">
+          <button onClick={() => handleLimitChange(4)} className={limit === 4 ? 'active' : ''}>
+            4 produkty
+          </button>
+          <button onClick={() => handleLimitChange(8)} className={limit === 8 ? 'active' : ''}>
+            8 produktów
+          </button>
+        </div>
         <Sort />
       </div>
       <h2 className="content__title">{title}</h2>
       <div className="content__items">{isLoading ? skeletons : products}</div>
-      <Pagination
-        currentPage={currentPage}
-        onChangePage={onChangePage}
-        pageCount={totalPages}
-      />{' '}
-      {/* Передаем количество страниц */}
+      <Pagination currentPage={currentPage} onChangePage={onChangePage} pageCount={totalPages} />
     </div>
   );
 };

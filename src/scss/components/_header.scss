@@ -2,7 +2,6 @@
 
 .header {
   border-bottom: 1px solid $gray-line;
-  padding: 20px;
 
   .container {
     display: flex;
@@ -14,10 +13,6 @@
       flex-direction: column;
       text-align: center;
       padding: 10px;
-
-      .header__cart {
-        margin-bottom: 20px;
-      }
     }
   }
 
@@ -76,10 +71,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-end; // Выравниваем корзину по правому краю на больших экранах
+    padding-right: 30px;
 
     @media (max-width: 645px) {
       justify-content: center;
-      margin-bottom: 10px;
+      padding-left: 30px;
     }
   }
 }
