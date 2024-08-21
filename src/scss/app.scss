@@ -707,6 +707,14 @@ body {
       background-color: #ff69b4;
       color: #fff;
     }
+
+    &:hover {
+      background-color: darken(#f9f9f9, 2%);
+    }
+
+    &:active {
+      background-color: darken(#f9f9f9, 5%);
+    }
   }
 
   @media (max-width: 768px) {
