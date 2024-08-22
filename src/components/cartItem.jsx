@@ -1,10 +1,11 @@
-import React from 'react';
-import { addItem, minusItem } from '../redux/slices/cartSlice';
+import React, { useState } from 'react';
+import { addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
 import { useDispatch } from 'react-redux';
-import { removeItem } from '../redux/slices/cartSlice';
+import CustomPopup from './CustomPopup';
 
 const CartItem = ({ id, title, type, size, price, count, image }) => {
   const dispatch = useDispatch();
+  const [isPopupVisible, setPopupVisible] = useState(false);
 
   const onClickPlus = () => {
     dispatch(
@@ -19,15 +20,22 @@ const CartItem = ({ id, title, type, size, price, count, image }) => {
   const onClickMinus = () => {
     if (count > 1) {
       dispatch(minusItem({ id, type, size }));
-    } else if (window.confirm('Are you sure you want to remove items?')) {
-      dispatch(removeItem({ id, type, size }));
+    } else {
+      setPopupVisible(true);
     }
   };
 
   const onClickRemove = () => {
-    if (window.confirm('Are you sure you want to remove items?')) {
-      dispatch(removeItem({ id, type, size }));
-    }
+    setPopupVisible(true);
+  };
+
+  const handleConfirmRemove = () => {
+    dispatch(removeItem({ id, type, size }));
+    setPopupVisible(false);
+  };
+
+  const handleCancelRemove = () => {
+    setPopupVisible(false);
   };
 
   return (
@@ -105,6 +113,13 @@ const CartItem = ({ id, title, type, size, price, count, image }) => {
           </svg>
         </div>
       </div>
+      {isPopupVisible && (
+        <CustomPopup
+          message="Czy na pewno chcesz usunąć przedmiot z koszyka?"
+          onConfirm={handleConfirmRemove}
+          onCancel={handleCancelRemove}
+        />
+      )}
     </div>
   );
 };
