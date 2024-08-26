@@ -1,0 +1,71 @@
+// styles/OrderConfirmation.scss
+.order-confirmation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  &__content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .order-confirmation__confirm {
+    background-color: #ff69b4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .order-confirmation__confirm:hover {
+    background-color: #ff85c1;
+  }
+
+  .order-confirmation__cancel {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .order-confirmation__cancel:hover {
+    background-color: #b3b3b3;
+  }
+
+  .order-confirmation__edit {
+    background-color: #ffc107; // Желтый цвет для кнопки "Edytuj"
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .order-confirmation__edit:hover {
+    background-color: #ffca28; // Более светлый оттенок желтого
+  }
+}

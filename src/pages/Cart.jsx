@@ -5,11 +5,21 @@ import CartItem from '../components/cartItem';
 import { clearItem } from '../redux/slices/cartSlice';
 import CartEmpty from '../components/CartEmpty';
 import CustomPopup from '../components/CustomPopup';
+import OrderForm from '../components/Order/OrderForm';
+import OrderConfirmation from '../components/Order/OrderConfirmation';
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(
+  'pk_test_51Ps1EDLbvPIbSoGb6oA3bOZsesuRqhs2AX7azAu8WDigjjvrHxiSLeDcmzfTKdb9jg3ZxhcoSAJeMLvTGDPo0IDf00VvJCvl8O',
+); // Ваш Publishable Key
 
 const Cart = () => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector((state) => state.cart);
   const [isPopupVisible, setPopupVisible] = useState(false);
+  const [isOrderFormVisible, setOrderFormVisible] = useState(false);
+  const [isOrderConfirmationVisible, setOrderConfirmationVisible] = useState(false);
+  const [orderData, setOrderData] = useState(null);
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
@@ -24,6 +34,54 @@ const Cart = () => {
 
   const handleCancelClear = () => {
     setPopupVisible(false);
+  };
+
+  const handleOrderSubmit = (formData) => {
+    setOrderData(formData);
+    setOrderFormVisible(false);
+    setOrderConfirmationVisible(true);
+  };
+
+  const handleConfirmPayment = async () => {
+    const stripe = await stripePromise;
+
+    // Создаем PaymentIntent на сервере
+    const response = await fetch('/create-payment-intent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        amount: totalPrice * 100, // сумма в центах (например, для $50 это 5000)
+      }),
+    });
+
+    const { clientSecret } = await response.json();
+
+    const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: {
+          /* данные карты, собранные с помощью Stripe Elements */
+        },
+        billing_details: {
+          name: orderData.name,
+          email: orderData.email,
+        },
+      },
+    });
+
+    if (error) {
+      console.error('Payment failed:', error);
+      // Обработка ошибки (например, показ уведомления)
+    } else if (paymentIntent.status === 'succeeded') {
+      console.log('Payment succeeded:', paymentIntent);
+      // Оплата прошла успешно, можно выполнить действия после успешной оплаты
+      setOrderConfirmationVisible(false);
+      // Здесь можно добавить редирект на страницу с подтверждением заказа
+    }
+  };
+
+  const handleEditOrder = () => {
+    setOrderConfirmationVisible(false);
+    setOrderFormVisible(true);
   };
 
   if (!totalPrice) {
@@ -88,7 +146,7 @@ const Cart = () => {
 
               <span>Wróć</span>
             </Link>
-            <div className="button pay-btn">
+            <div className="button pay-btn" onClick={() => setOrderFormVisible(true)}>
               <span>Zapłać teraz</span>
             </div>
           </div>
@@ -99,6 +157,21 @@ const Cart = () => {
           message="Czy na pewno chcesz wyczyścić koszyk?"
           onConfirm={handleConfirmClear}
           onCancel={handleCancelClear}
+        />
+      )}
+      {isOrderFormVisible && (
+        <OrderForm
+          onClose={() => setOrderFormVisible(false)}
+          onSubmit={handleOrderSubmit}
+          initialData={orderData}
+        />
+      )}
+      {isOrderConfirmationVisible && (
+        <OrderConfirmation
+          formData={orderData}
+          onConfirmPayment={handleConfirmPayment}
+          onCancel={() => setOrderConfirmationVisible(false)}
+          onEdit={handleEditOrder}
         />
       )}
     </div>
