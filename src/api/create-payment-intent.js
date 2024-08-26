@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     try {
       const paymentIntent = await stripe.paymentIntents.create({
         amount, // сумма в центах
-        currency: 'zł', // Замените на нужную вам валюту
+        currency: 'pln', // Правильный код валюты
       });
 
       res.status(200).json({ clientSecret: paymentIntent.client_secret });
