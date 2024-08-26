@@ -1,7 +1,9 @@
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
-const stripePromise = loadStripe('pk_test_XXXXXXXXXXXXXXXXXXXX'); // Ваш Publishable Key
+const stripePromise = loadStripe(
+  'pk_test_51Ps1EDLbvPIbSoGb6oA3bOZsesuRqhs2AX7azAu8WDigjjvrHxiSLeDcmzfTKdb9jg3ZxhcoSAJeMLvTGDPo0IDf00VvJCvl8O',
+); // Ваш Publishable Key
 
 const OrderConfirmation = ({ formData, onConfirmPayment, onCancel, onEdit }) => {
   const handlePayment = async () => {
