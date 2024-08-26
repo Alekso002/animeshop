@@ -11,7 +11,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 const stripePromise = loadStripe(
   'pk_test_51Ps1EDLbvPIbSoGb6oA3bOZsesuRqhs2AX7azAu8WDigjjvrHxiSLeDcmzfTKdb9jg3ZxhcoSAJeMLvTGDPo0IDf00VvJCvl8O',
-); // Ваш Publishable Key
+); // Замените на ваш Publishable Key
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -42,31 +42,22 @@ const Cart = () => {
     setOrderConfirmationVisible(true);
   };
 
-  const handleConfirmPayment = async () => {
+  const handleConfirmPayment = async (paymentMethodId) => {
     const stripe = await stripePromise;
 
     // Создаем PaymentIntent на сервере
-    const response = await fetch('/create-payment-intent', {
+    const response = await fetch('/api/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        amount: totalPrice * 100, // сумма в центах (например, для $50 это 5000)
+        amount: totalPrice * 100, // сумма в центах (например, 5000 = 50.00)
+        paymentMethodId,
       }),
     });
 
     const { clientSecret } = await response.json();
 
-    const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: {
-          /* данные карты, собранные с помощью Stripe Elements */
-        },
-        billing_details: {
-          name: orderData.name,
-          email: orderData.email,
-        },
-      },
-    });
+    const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret);
 
     if (error) {
       console.error('Payment failed:', error);

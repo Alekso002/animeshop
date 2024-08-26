@@ -1,19 +1,31 @@
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
+import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 const stripePromise = loadStripe(
   'pk_test_51Ps1EDLbvPIbSoGb6oA3bOZsesuRqhs2AX7azAu8WDigjjvrHxiSLeDcmzfTKdb9jg3ZxhcoSAJeMLvTGDPo0IDf00VvJCvl8O',
 ); // Ваш Publishable Key
 
 const OrderConfirmation = ({ formData, onConfirmPayment, onCancel, onEdit }) => {
+  const stripe = useStripe();
+  const elements = useElements();
+
   const handlePayment = async () => {
-    const stripe = await stripePromise;
+    if (!stripe || !elements) {
+      // Stripe.js еще не загружен
+      return;
+    }
+
+    const cardElement = elements.getElement(CardElement);
+
+    if (!cardElement) {
+      console.error('CardElement not found');
+      return;
+    }
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
-      card: {
-        // Здесь будет Stripe Elements (который должен быть интегрирован)
-      },
+      card: cardElement,
       billing_details: {
         name: formData.name,
         email: formData.email,
@@ -56,6 +68,11 @@ const OrderConfirmation = ({ formData, onConfirmPayment, onCancel, onEdit }) => 
           <strong>Numer Telefonu:</strong> {formData.phone}
         </p>
 
+        {/* Stripe Elements Card Input */}
+        <div className="order-confirmation__card">
+          <CardElement />
+        </div>
+
         <div className="order-confirmation__buttons">
           <button className="order-confirmation__confirm" onClick={handlePayment}>
             Opłać
@@ -72,4 +89,10 @@ const OrderConfirmation = ({ formData, onConfirmPayment, onCancel, onEdit }) => 
   );
 };
 
-export default OrderConfirmation;
+const OrderConfirmationWrapper = (props) => (
+  <Elements stripe={stripePromise}>
+    <OrderConfirmation {...props} />
+  </Elements>
+);
+
+export default OrderConfirmationWrapper;
