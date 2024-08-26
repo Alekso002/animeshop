@@ -46,7 +46,7 @@ const Cart = () => {
     const stripe = await stripePromise;
 
     // Создаем PaymentIntent на сервере
-    const response = await fetch('/api/create-payment-intent', {
+    const response = await fetch('http://localhost:3000/api/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -69,6 +69,7 @@ const Cart = () => {
       // Здесь можно добавить редирект на страницу с подтверждением заказа
     }
   };
+  console.log('Stripe Secret Key:', process.env.STRIPE_SECRET_KEY);
 
   const handleEditOrder = () => {
     setOrderConfirmationVisible(false);
