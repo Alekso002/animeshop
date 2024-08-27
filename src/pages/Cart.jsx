@@ -38,7 +38,10 @@ const Cart = () => {
   };
 
   const handleOrderSubmit = async (formData) => {
-    setOrderData(formData);
+    setOrderData({
+      ...formData,
+      products: items, // Добавляем товары в formData
+    });
     setOrderFormVisible(false);
 
     // Запрос на создание платежного намерения

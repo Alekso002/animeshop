@@ -86,6 +86,18 @@ const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
           <strong>Numer Telefonu:</strong> {formData.phone}
         </p>
 
+        {/* Отображение списка продуктов */}
+        <div className="order-confirmation__products">
+          <h3>Zamówione Produkty:</h3>
+          <ul>
+            {formData.products.map((product, index) => (
+              <li key={index}>
+                {product.title} - {product.type} - {product.size} - {product.count} szt.
+              </li>
+            ))}
+          </ul>
+        </div>
+
         {/* Stripe Elements Card Input */}
         <div className="order-confirmation__card">
           <CardElement />
