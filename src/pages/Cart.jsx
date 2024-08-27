@@ -6,7 +6,12 @@ import { clearItem } from '../redux/slices/cartSlice';
 import CartEmpty from '../components/CartEmpty';
 import CustomPopup from '../components/CustomPopup';
 import OrderForm from '../components/Order/OrderForm';
-import OrderConfirmationWrapper from '../components/Order/OrderConfirmation'; // Импортируйте ваш компонент здесь
+import OrderConfirmationWrapper from '../components/Order/OrderConfirmation'; // Импорт компонента подтверждения заказа
+import { loadStripe } from '@stripe/stripe-js';
+
+const stripePromise = loadStripe(
+  'pk_test_51Ps1EDLbvPIbSoGb6oA3bOZsesuRqhs2AX7azAu8WDigjjvrHxiSLeDcmzfTKdb9jg3ZxhcoSAJeMLvTGDPo0IDf00VvJCvl8O',
+); // Замените на ваш Publishable Key
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -15,7 +20,7 @@ const Cart = () => {
   const [isOrderFormVisible, setOrderFormVisible] = useState(false);
   const [isOrderConfirmationVisible, setOrderConfirmationVisible] = useState(false);
   const [orderData, setOrderData] = useState(null);
-  const [clientSecret, setClientSecret] = useState(null); // Добавляем состояние для clientSecret
+  const [clientSecret, setClientSecret] = useState(null);
 
   const totalCount = items.reduce((sum, item) => sum + item.count, 0);
 
@@ -49,6 +54,30 @@ const Cart = () => {
     setClientSecret(data.clientSecret); // Сохранение clientSecret в состоянии
 
     setOrderConfirmationVisible(true);
+  };
+
+  const handleConfirmPayment = async (paymentMethodId) => {
+    const stripe = await stripePromise;
+
+    try {
+      const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: paymentMethodId,
+      });
+
+      if (error) {
+        console.error('Ошибка оплаты:', error);
+        // Обработка ошибки (например, показ уведомления пользователю)
+      } else if (paymentIntent && paymentIntent.status === 'succeeded') {
+        console.log('Payment succeeded:', paymentIntent);
+        // Оплата прошла успешно, можно выполнить действия после успешной оплаты
+        setOrderConfirmationVisible(false);
+        // Здесь можно добавить редирект на страницу с подтверждением заказа
+      } else {
+        console.error('Неожиданное состояние платежа:', paymentIntent);
+      }
+    } catch (err) {
+      console.error('Ошибка во время оплаты:', err);
+    }
   };
 
   const handleEditOrder = () => {
@@ -141,7 +170,8 @@ const Cart = () => {
       {isOrderConfirmationVisible && clientSecret && (
         <OrderConfirmationWrapper
           formData={orderData}
-          clientSecret={clientSecret} // Передаем clientSecret в OrderConfirmationWrapper
+          clientSecret={clientSecret}
+          onConfirmPayment={handleConfirmPayment}
           onCancel={() => setOrderConfirmationVisible(false)}
           onEdit={handleEditOrder}
         />
