@@ -44,6 +44,11 @@ const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
 
     if (error) {
       console.error('[Ошибка оплаты]', error);
+      navigate('/order-success', {
+        state: {
+          paymentError: error.message, // Передаем сообщение об ошибке
+        },
+      });
       return;
     }
 
