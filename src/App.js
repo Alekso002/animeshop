@@ -6,8 +6,10 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
-import { Routes, Route } from 'react-router-dom';
 import FullAnime from './components/FullAnime';
+import OrderSuccess from './components/Order/OrderSuccess'; // Импортируйте новый компонент
+import { Routes, Route } from 'react-router-dom';
+
 export const SearchContext = React.createContext();
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/anime/:id" element={<FullAnime />} />
+              <Route path="/order-success" element={<OrderSuccess />} />{' '}
+              {/* Добавьте этот маршрут */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

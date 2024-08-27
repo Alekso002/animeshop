@@ -1,6 +1,7 @@
 import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { useNavigate } from 'react-router-dom';
 
 // Инициализация Stripe с вашим Publishable Key
 const stripePromise = loadStripe(
@@ -10,6 +11,7 @@ const stripePromise = loadStripe(
 const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
 
   const handlePayment = async () => {
     if (!stripe || !elements) {
@@ -47,7 +49,17 @@ const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
 
     if (paymentIntent.status === 'succeeded') {
       console.log('Оплата прошла успешно!', paymentIntent);
-      // Здесь можно добавить логику для успешной оплаты, например, редирект на страницу с подтверждением заказа
+
+      // Перенаправление на страницу успеха заказа
+      navigate('/order-success', {
+        state: {
+          orderDetails: {
+            ...formData,
+            totalPrice: (paymentIntent.amount / 100).toFixed(2), // Перевод суммы в формат zł
+            orderId: paymentIntent.id, // Используем ID paymentIntent в качестве номера заказа
+          },
+        },
+      });
     }
   };
 
