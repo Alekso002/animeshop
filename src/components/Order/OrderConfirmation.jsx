@@ -2,17 +2,18 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
+// Инициализация Stripe с вашим Publishable Key
 const stripePromise = loadStripe(
   'pk_test_51Ps1EDLbvPIbSoGb6oA3bOZsesuRqhs2AX7azAu8WDigjjvrHxiSLeDcmzfTKdb9jg3ZxhcoSAJeMLvTGDPo0IDf00VvJCvl8O',
-); // Ваш Publishable Key
+);
 
-const OrderConfirmation = ({ formData, onConfirmPayment, onCancel, onEdit }) => {
+const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
   const stripe = useStripe();
   const elements = useElements();
 
   const handlePayment = async () => {
     if (!stripe || !elements) {
-      // Stripe.js еще не загружен
+      // Убедитесь, что Stripe.js загружен
       return;
     }
 
@@ -23,26 +24,31 @@ const OrderConfirmation = ({ formData, onConfirmPayment, onCancel, onEdit }) => 
       return;
     }
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: cardElement,
-      billing_details: {
-        name: formData.name,
-        email: formData.email,
-        address: {
-          line1: formData.address,
-          city: formData.city,
-          postal_code: formData.postalCode,
+    // Подтверждение платежа с использованием clientSecret
+    const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: {
+        card: cardElement,
+        billing_details: {
+          name: formData.name,
+          email: formData.email,
+          address: {
+            line1: formData.address,
+            city: formData.city,
+            postal_code: formData.postalCode,
+          },
         },
       },
     });
 
     if (error) {
-      console.error('[Error]', error);
+      console.error('[Ошибка оплаты]', error);
       return;
     }
 
-    onConfirmPayment(paymentMethod.id);
+    if (paymentIntent.status === 'succeeded') {
+      console.log('Оплата прошла успешно!', paymentIntent);
+      // Здесь можно добавить логику для успешной оплаты, например, редирект на страницу с подтверждением заказа
+    }
   };
 
   return (
