@@ -3,8 +3,10 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import { AnimeBlock } from '../AnimeBlock'; // Импортируем AnimeBlock
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const FullAnime = () => {
+  const { t } = useTranslation();
   const [anime, setAnime] = React.useState();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -17,15 +19,15 @@ const FullAnime = () => {
         const { data } = await axios.get(`${API}/Items/${id}`);
         setAnime(data);
       } catch (error) {
-        alert('Nie ma produktów!');
+        alert(t('noProducts')); // Используем перевод
         navigate('/');
       }
     }
     fetchAnime();
-  }, [id, navigate]);
+  }, [id, navigate, t]);
 
   if (!anime) {
-    return 'Please wait...';
+    return t('pleaseWait'); // Используем перевод
   }
 
   return (
@@ -46,7 +48,7 @@ const FullAnime = () => {
             category={anime.category}
           />
           <Link to="/" className="button button--orange">
-            <span>Wróć</span>
+            <span>{t('goBack')}</span> {/* Используем перевод */}
           </Link>
         </div>
       </div>

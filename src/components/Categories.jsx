@@ -1,7 +1,17 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Categories({ value, onChangeCategory }) {
-  const categories = ['Wszystko', 'Figurki', 'Plakaty', 'Manga', 'PC', 'Inne'];
+  const { t } = useTranslation();
+
+  const categories = [
+    t('categories.all'),
+    t('categories.figures'),
+    t('categories.posters'),
+    t('categories.manga'),
+    t('categories.pc'),
+    t('categories.others'),
+  ];
 
   return (
     <div className="categories">

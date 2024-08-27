@@ -8,7 +8,7 @@ const NotFoundBlock = () => {
       <h1>
         <span>😭</span>
         <br />
-        Nie ma nic
+        Error
       </h1>
     </div>
   );

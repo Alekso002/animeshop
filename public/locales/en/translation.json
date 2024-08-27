@@ -1,0 +1,41 @@
+{
+  "categories": {
+    "all": "All",
+    "figures": "Figures",
+    "posters": "Posters",
+    "manga": "Manga",
+    "pc": "PC",
+    "others": "Others"
+  },
+
+  "language": "Language",
+  "add": "Add",
+  "noProducts": "No products available!",
+  "pleaseWait": "Please wait...",
+  "goBack": "Go back",
+  "orderConfirmation": "Order Confirmation",
+  "name": "Name",
+  "email": "Email",
+  "address": "Address",
+  "city": "City",
+  "postalCode": "Postal Code",
+  "phoneNumber": "Phone Number",
+  "orderedProducts": "Ordered Products",
+  "pay": "Pay",
+  "edit": "Edit",
+  "cancel": "Cancel",
+  "orderForm": "Order Form",
+  "confirmOrder": "Confirm Order",
+  "phone": "Phone",
+  "noOrderData": "No order data available.",
+  "paymentFailed": "Payment Failed",
+  "paymentError": "Sorry, your payment was not processed.",
+  "reason": "Reason",
+  "backToCart": "Back to cart",
+
+  "thankYouForOrder": "Thank you for your order! Your payment was successfully processed.",
+  "orderDetails": "Order Details",
+  "totalPrice": "Total Price",
+  "orderId": "Order Number",
+  "backToHome": "Back to home"
+}

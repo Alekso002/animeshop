@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const OrderSuccess = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const orderDetails = location.state?.orderDetails;
   const paymentError = location.state?.paymentError;
 
   if (!orderDetails && !paymentError) {
-    return <p>Brak danych o zamówieniu.</p>;
+    return <p>{t('noOrderData')}</p>;
   }
 
   return (
@@ -15,51 +17,53 @@ const OrderSuccess = () => {
       <div className="order-success__content">
         {paymentError ? (
           <>
-            <h2>Nieudana płatność</h2>
-            <p>Przepraszamy, Twoja płatność nie została przetworzona.</p>
-            <p>Powód: {paymentError}</p>
+            <h2>{t('paymentFailed')}</h2>
+            <p>{t('paymentError')}</p>
+            <p>
+              {t('reason')}: {paymentError}
+            </p>
             <div className="order-success__buttons">
               <Link to="/cart" className="button">
-                Wróć do koszyka
+                {t('backToCart')}
               </Link>
             </div>
           </>
         ) : (
           <>
-            <h2>Potwierdzenie zamówienia</h2>
-            <p>Dziękujemy za Twoje zamówienie! Twoja płatność została pomyślnie przetworzona.</p>
+            <h2>{t('orderConfirmation')}</h2>
+            <p>{t('thankYouForOrder')}</p>
 
             <div className="order-details">
-              <h3>Szczegóły zamówienia</h3>
+              <h3>{t('orderDetails')}</h3>
               <p>
-                <strong>Imię i Nazwisko:</strong> {orderDetails.name}
+                <strong>{t('name')}:</strong> {orderDetails.name}
               </p>
               <p>
-                <strong>Email:</strong> {orderDetails.email}
+                <strong>{t('email')}:</strong> {orderDetails.email}
               </p>
               <p>
-                <strong>Adres:</strong> {orderDetails.address}
+                <strong>{t('address')}:</strong> {orderDetails.address}
               </p>
               <p>
-                <strong>Miasto:</strong> {orderDetails.city}
+                <strong>{t('city')}:</strong> {orderDetails.city}
               </p>
               <p>
-                <strong>Kod Pocztowy:</strong> {orderDetails.postalCode}
+                <strong>{t('postalCode')}:</strong> {orderDetails.postalCode}
               </p>
               <p>
-                <strong>Numer Telefonu:</strong> {orderDetails.phone}
+                <strong>{t('phoneNumber')}:</strong> {orderDetails.phone}
               </p>
               <p>
-                <strong>Suma zamówienia:</strong> {orderDetails.totalPrice} zł
+                <strong>{t('totalPrice')}:</strong> {orderDetails.totalPrice} zł
               </p>
               <p>
-                <strong>Numer zamówienia:</strong> {orderDetails.orderId}
+                <strong>{t('orderId')}:</strong> {orderDetails.orderId}
               </p>
             </div>
 
             <div className="order-success__buttons">
               <Link to="/" className="button">
-                Wróć na stronę główną
+                {t('backToHome')}
               </Link>
             </div>
           </>

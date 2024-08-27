@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addItem } from '../../redux/slices/cartSlice';
+import { useTranslation } from 'react-i18next';
 
 const typeNames = [
   'figurka',
@@ -29,6 +30,7 @@ const typeNames = [
 
 export function AnimeBlock({ id, title, prices, image, sizes, types, category }) {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const [activeType, setActiveType] = React.useState(types[0] || 0);
   const [activeSize, setActiveSize] = React.useState(0);
@@ -103,7 +105,7 @@ export function AnimeBlock({ id, title, prices, image, sizes, types, category })
                 fill="white"
               />
             </svg>
-            <span>Dodać</span>
+            <span>{t('add')}</span>
             {addedCount > 0 && <i>{addedCount}</i>}
           </button>
         </div>

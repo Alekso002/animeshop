@@ -19,7 +19,6 @@
   &__logo {
     display: flex;
     align-items: center;
-    justify-content: center; // Центрируем логотип на мобильных устройствах
     margin-bottom: 10px;
 
     h1 {
@@ -40,15 +39,16 @@
     @media (max-width: 645px) {
       flex-direction: column;
       align-items: center;
-      justify-content: center; // Центрируем логотип и текст под ним
       text-align: center;
+      margin-bottom: 20px;
     }
   }
 
   &__search {
     display: flex;
     align-items: center;
-    justify-content: center; // Центрируем поле поиска
+    justify-content: center;
+    flex-grow: 1;
 
     input {
       width: 100%;
@@ -61,8 +61,85 @@
         font-size: 14px;
         padding: 8px;
         margin-top: 10px;
-        justify-content: center;
         margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @media (max-width: 645px) {
+      justify-content: center;
+      margin-top: 10px;
+      flex-direction: column; /* Размещаем элементы друг под другом на мобильных устройствах */
+    }
+  }
+
+  .header__language-switcher {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+
+    .button--language {
+      background-color: #ff69b4;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 25px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ff85c9;
+      }
+
+      @media (max-width: 645px) {
+        padding: 8px 16px;
+        font-size: 12px;
+        margin-bottom: 10px; /* Добавляем отступ между кнопками */
+        margin-left: 10px;
+      }
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      z-index: 1;
+      min-width: 100px;
+      padding: 5px 0;
+
+      button {
+        width: 100%;
+        padding: 8px 10px;
+        background-color: transparent;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+          background-color: #f1f1f1;
+        }
+
+        @media (max-width: 645px) {
+          font-size: 12px;
+          padding: 6px 8px;
+        }
+      }
+    }
+
+    @media (max-width: 645px) {
+      .dropdown {
+        margin-left: 10px;
       }
     }
   }
@@ -70,12 +147,40 @@
   .header__cart {
     display: flex;
     align-items: center;
-    justify-content: flex-end; // Выравниваем корзину по правому краю на больших экранах
-    padding-right: 30px;
+    justify-content: flex-end;
+    margin-right: 10px;
 
     @media (max-width: 645px) {
       justify-content: center;
-      padding-left: 30px;
+      padding: 0;
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    .button--cart {
+      background-color: #ff69b4;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ff85c9;
+      }
+
+      span {
+        margin-left: 10px;
+      }
+
+      @media (max-width: 645px) {
+        padding: 8px 16px;
+        span {
+          margin-left: 5px;
+        }
+      }
     }
   }
 }

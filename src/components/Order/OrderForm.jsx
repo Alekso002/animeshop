@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const OrderForm = ({ onClose, onSubmit, initialData }) => {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,10 +32,10 @@ const OrderForm = ({ onClose, onSubmit, initialData }) => {
   return (
     <div className="order-form">
       <div className="order-form__content">
-        <h2>Formularz zamówienia</h2>
+        <h2>{t('orderForm')}</h2>
         <form onSubmit={handleSubmit}>
           <div className="order-form__group">
-            <label htmlFor="name">Imię i Nazwisko</label>
+            <label htmlFor="name">{t('name')}</label>
             <input
               type="text"
               id="name"
@@ -43,7 +46,7 @@ const OrderForm = ({ onClose, onSubmit, initialData }) => {
             />
           </div>
           <div className="order-form__group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t('email')}</label>
             <input
               type="email"
               id="email"
@@ -54,7 +57,7 @@ const OrderForm = ({ onClose, onSubmit, initialData }) => {
             />
           </div>
           <div className="order-form__group">
-            <label htmlFor="address">Adres</label>
+            <label htmlFor="address">{t('address')}</label>
             <input
               type="text"
               id="address"
@@ -65,7 +68,7 @@ const OrderForm = ({ onClose, onSubmit, initialData }) => {
             />
           </div>
           <div className="order-form__group">
-            <label htmlFor="city">Miasto</label>
+            <label htmlFor="city">{t('city')}</label>
             <input
               type="text"
               id="city"
@@ -76,7 +79,7 @@ const OrderForm = ({ onClose, onSubmit, initialData }) => {
             />
           </div>
           <div className="order-form__group">
-            <label htmlFor="postalCode">Kod Pocztowy</label>
+            <label htmlFor="postalCode">{t('postalCode')}</label>
             <input
               type="text"
               id="postalCode"
@@ -87,7 +90,7 @@ const OrderForm = ({ onClose, onSubmit, initialData }) => {
             />
           </div>
           <div className="order-form__group">
-            <label htmlFor="phone">Numer Telefonu</label>
+            <label htmlFor="phone">{t('phone')}</label>
             <input
               type="text"
               id="phone"
@@ -99,10 +102,10 @@ const OrderForm = ({ onClose, onSubmit, initialData }) => {
           </div>
           <div className="order-form__buttons">
             <button type="submit" className="order-form__submit">
-              Potwierdź zamówienie
+              {t('confirmOrder')}
             </button>
             <button type="button" className="order-form__cancel" onClick={onClose}>
-              Anuluj
+              {t('cancel')}
             </button>
           </div>
         </form>

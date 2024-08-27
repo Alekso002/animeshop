@@ -1,0 +1,42 @@
+{
+  "categories": {
+    "all": "Wszystko",
+    "figures": "Figurki",
+    "posters": "Plakaty",
+    "manga": "Manga",
+    "pc": "PC",
+    "others": "Inne"
+  },
+
+  "language": "Język",
+  "add": "Dodać",
+  "noProducts": "Nie ma produktów!",
+  "pleaseWait": "Proszę czekać...",
+  "goBack": "Wróć",
+  "orderConfirmation": "Potwierdzenie zamówienia",
+  "name": "Imię i Nazwisko",
+  "email": "Email",
+  "address": "Adres",
+  "city": "Miasto",
+  "postalCode": "Kod Pocztowy",
+  "phoneNumber": "Numer Telefonu",
+  "orderedProducts": "Zamówione Produkty",
+  "pay": "Opłać",
+  "edit": "Edytuj",
+  "cancel": "Anuluj",
+  "orderForm": "Formularz zamówienia",
+  "confirmOrder": "Potwierdź zamówienie",
+  "phone": "Numer Telefonu",
+  "noOrderData": "Brak danych o zamówieniu.",
+  "paymentFailed": "Nieudana płatność",
+  "paymentError": "Przepraszamy, Twoja płatność nie została przetworzona.",
+  "reason": "Powód",
+  "backToCart": "Wróć do koszyka",
+
+  "thankYouForOrder": "Dziękujemy za Twoje zamówienie! Twoja płatność została pomyślnie przetworzona.",
+  "orderDetails": "Szczegóły zamówienia",
+
+  "totalPrice": "Suma zamówienia",
+  "orderId": "Numer zamówienia",
+  "backToHome": "Wróć na stronę główną"
+}

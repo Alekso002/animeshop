@@ -2,6 +2,7 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // Инициализация Stripe с вашим Publishable Key
 const stripePromise = loadStripe(
@@ -12,6 +13,7 @@ const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handlePayment = async () => {
     if (!stripe || !elements) {
@@ -71,29 +73,29 @@ const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
   return (
     <div className="order-confirmation">
       <div className="order-confirmation__content">
-        <h2>Potwierdzenie zamówienia</h2>
+        <h2>{t('orderConfirmation')}</h2>
         <p>
-          <strong>Imię i Nazwisko:</strong> {formData.name}
+          <strong>{t('name')}:</strong> {formData.name}
         </p>
         <p>
-          <strong>Email:</strong> {formData.email}
+          <strong>{t('email')}:</strong> {formData.email}
         </p>
         <p>
-          <strong>Adres:</strong> {formData.address}
+          <strong>{t('address')}:</strong> {formData.address}
         </p>
         <p>
-          <strong>Miasto:</strong> {formData.city}
+          <strong>{t('city')}:</strong> {formData.city}
         </p>
         <p>
-          <strong>Kod Pocztowy:</strong> {formData.postalCode}
+          <strong>{t('postalCode')}:</strong> {formData.postalCode}
         </p>
         <p>
-          <strong>Numer Telefonu:</strong> {formData.phone}
+          <strong>{t('phoneNumber')}:</strong> {formData.phone}
         </p>
 
         {/* Отображение списка продуктов */}
         <div className="order-confirmation__products">
-          <h3>Zamówione Produkty:</h3>
+          <h3>{t('orderedProducts')}:</h3>
           <ul>
             {formData.products.map((product, index) => (
               <li key={index}>
@@ -110,13 +112,13 @@ const OrderConfirmation = ({ formData, clientSecret, onCancel, onEdit }) => {
 
         <div className="order-confirmation__buttons">
           <button className="order-confirmation__confirm" onClick={handlePayment}>
-            Opłać
+            {t('pay')}
           </button>
           <button className="order-confirmation__edit" onClick={onEdit}>
-            Edytuj
+            {t('edit')}
           </button>
           <button className="order-confirmation__cancel" onClick={onCancel}>
-            Anuluj
+            {t('cancel')}
           </button>
         </div>
       </div>
