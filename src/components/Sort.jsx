@@ -1,19 +1,26 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSort } from '../redux/slices/filterSlice';
+import { useTranslation } from 'react-i18next';
 
 function Sort() {
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.filter.sort);
   const sortRef = React.useRef();
+  const { t } = useTranslation();
 
   const [open, setOpen] = React.useState(false);
+
+  // Define the list with sort options and their corresponding sortProperty values
   const list = [
-    { name: 'od najwyższej ceny', sortProperty: 'price' },
-    { name: 'od najniższej ceny', sortProperty: '-price' },
-    { name: 'nazwa produktu od A do Z', sortProperty: 'title' },
-    { name: 'nazwa produktu od Z do A', sortProperty: '-title' },
+    { label: 'sortByHighestPrice', sortProperty: 'price' },
+    { label: 'sortByLowestPrice', sortProperty: '-price' },
+    { label: 'sortByNameAsc', sortProperty: 'title' },
+    { label: 'sortByNameDesc', sortProperty: '-title' },
   ];
+
+  // Find the active sort option dynamically by the sortProperty in the state
+  const activeSort = list.find((item) => item.sortProperty === sort.sortProperty);
 
   const onClickListItem = (obj) => {
     dispatch(setSort(obj));
@@ -24,7 +31,6 @@ function Sort() {
     const handleClickOutside = (event) => {
       if (!event.composedPath().includes(sortRef.current)) {
         setOpen(false);
-        console.log('click');
       }
     };
 
@@ -49,8 +55,8 @@ function Sort() {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Sortuj:</b>
-        <span onClick={() => setOpen(!open)}>{sort.name}</span>
+        <b>{t('sort')}</b>
+        <span onClick={() => setOpen(!open)}>{t(activeSort?.label)}</span>
       </div>
       {open && (
         <div className="sort__popup">
@@ -60,7 +66,7 @@ function Sort() {
                 key={i}
                 onClick={() => onClickListItem(obj)}
                 className={sort.sortProperty === obj.sortProperty ? 'active' : ''}>
-                {obj.name}
+                {t(obj.label)}
               </li>
             ))}
           </ul>
@@ -69,4 +75,5 @@ function Sort() {
     </div>
   );
 }
+
 export default Sort;

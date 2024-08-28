@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import qs from 'qs';
@@ -7,23 +7,26 @@ import { setItems } from '../redux/slices/animeSlice';
 import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
 import Sort from '../components/Sort';
 import Categories from '../components/Categories';
+
 import AnimeBlock from '../components/AnimeBlock';
 import Skeleton from '../components/AnimeBlock/Skeleton';
 import Pagination from '../components/Pagination';
 import { SearchContext } from '../App';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
   const currentPage = useSelector((state) => state.filter.currentPage);
   const categoryId = useSelector((state) => state.filter.categoryId);
   const sortType = useSelector((state) => state.filter.sort.sortProperty);
   const items = useSelector((state) => state.anime.items);
-  const { searchValue } = React.useContext(SearchContext);
+  const { searchValue } = useContext(SearchContext);
 
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [totalPages, setTotalPages] = React.useState(0); // Состояние для количества страниц
-  const [limit, setLimit] = React.useState(4); // Состояние для лимита элементов на странице
+  const [isLoading, setIsLoading] = useState(true);
+  const [totalPages, setTotalPages] = useState(0);
+  const [limit, setLimit] = useState(4);
 
   const onChangePage = (number) => {
     dispatch(setCurrentPage(number));
@@ -37,78 +40,83 @@ const Home = () => {
     setLimit(newLimit);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Сбрасываем currentPage на 1 при смене категории
     dispatch(setCurrentPage(1));
   }, [categoryId, dispatch]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Сбрасываем currentPage на 1 при смене sort
     dispatch(setCurrentPage(1));
   }, [sortType, dispatch]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsLoading(true);
 
     const price = sortType.includes('-') ? 'price1' : '-price1';
     const title = sortType.includes('-') ? '-title' : 'title';
     const API_BASE_URL = 'https://e89850b9c98b02ad.mokky.dev';
 
-    axios
-      .get(
-        `${API_BASE_URL}/Items?page=${currentPage}&limit=${limit}&${
-          categoryId > 0 ? `category=${categoryId}` : ''
-        }&sortBy=${sortType.includes('title') ? title : price}`,
-      )
-      .then((res) => {
-        console.log('API Response:', res.data);
+    const fetchItems = async () => {
+      try {
+        const { data } = await axios.get(`${API_BASE_URL}/Items`, {
+          params: {
+            page: currentPage,
+            limit: limit,
+            category: categoryId > 0 ? categoryId : undefined,
+            sortBy: sortType.includes('title') ? title : price,
+            title: searchValue ? `*${searchValue}*` : undefined, // Фильтрация по названию с использованием `*`
+          },
+        });
 
-        if (Array.isArray(res.data.items)) {
-          dispatch(setItems(res.data.items));
-          const totalPages = res.data.meta.total_pages; // Используем total_pages из метаданных
-          setTotalPages(totalPages); // Устанавливаем количество страниц
+        if (Array.isArray(data.items)) {
+          dispatch(setItems(data.items));
+          const totalPages = data.meta.total_pages; // Используем total_pages из метаданных
+          setTotalPages(totalPages);
         } else {
-          console.error('Unexpected response structure:', res.data);
+          console.error('Unexpected response structure:', data);
           dispatch(setItems([]));
         }
-
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setIsLoading(false);
+      } catch (err) {
         alert('Error fetching items');
-      });
+        dispatch(setItems([]));
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchItems();
 
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, searchValue, currentPage, limit]);
+  }, [categoryId, sortType, searchValue, currentPage, limit, dispatch]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const queryString = qs.stringify({ sortType, categoryId, currentPage, limit });
     navigate(`?${queryString}`);
-  }, [categoryId, sortType, currentPage, limit]);
+  }, [categoryId, sortType, currentPage, limit, navigate]);
 
-  const products = Array.isArray(items)
-    ? items
-        .filter((obj) => obj.title.toLowerCase().includes(searchValue.toLowerCase()))
-        .map((obj) => (
-          <AnimeBlock
-            key={obj.id}
-            {...obj}
-            image={obj.imageUrl}
-            prices={[obj.price1, obj.price2, obj.price3]}
-          />
-        ))
-    : [];
+  useEffect(() => {
+    // Этот useEffect будет перерендеривать компонент при смене языка
+  }, [i18n.language]);
 
   const skeletons = [...new Array(limit)].map((_, index) => <Skeleton key={index} />);
 
+  const products = items.map((obj) => (
+    <AnimeBlock
+      key={obj.id}
+      {...obj}
+      image={obj.imageUrl}
+      prices={[obj.price1, obj.price2, obj.price3]}
+    />
+  ));
+
   const titles = {
-    0: 'Figurki i Gadżety Anime / Manga',
-    1: 'Figurki',
-    2: 'Plakaty',
-    3: 'Manga',
-    4: 'PC',
-    5: 'Inne',
+    0: t('all'),
+    1: t('figures'),
+    2: t('posters'),
+    3: t('manga'),
+    4: t('pc'),
+    5: t('others'),
   };
 
   const title = titles[categoryId];
@@ -119,10 +127,10 @@ const Home = () => {
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <div className="limit-buttons">
           <button onClick={() => handleLimitChange(4)} className={limit === 4 ? 'active' : ''}>
-            4 produkty
+            {t('products4')}
           </button>
           <button onClick={() => handleLimitChange(8)} className={limit === 8 ? 'active' : ''}>
-            8 produktów
+            {t('products8')}
           </button>
         </div>
         <Sort />

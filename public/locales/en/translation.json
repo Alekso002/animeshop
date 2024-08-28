@@ -32,10 +32,350 @@
   "paymentError": "Sorry, your payment was not processed.",
   "reason": "Reason",
   "backToCart": "Back to cart",
-
   "thankYouForOrder": "Thank you for your order! Your payment was successfully processed.",
   "orderDetails": "Order Details",
   "totalPrice": "Total Price",
   "orderId": "Order Number",
-  "backToHome": "Back to home"
+  "searchPlaceholder": "Search ...",
+  "cartEmptyTitle": "Your cart is empty 😕",
+  "cartEmptyDescription": "You probably haven't chosen anything yet.",
+  "cartEmptyHint": "To buy a product, go to the main page.",
+  "backToHome": "Back to home",
+  "yes": "Yes",
+  "no": "No",
+  "sortByHighestPrice": "from highest price",
+  "sortByLowestPrice": "from lowest price",
+  "sortByNameAsc": "product name(A - Z)",
+  "sortByNameDesc": "product name(Z - A)",
+  "sort": "Sort:",
+  "cartTitle": "Cart",
+  "clearCart": "Clear cart",
+  "total": "Total",
+  "pieces": "pcs.",
+  "orderTotal": "Order total",
+  "back": "Back",
+  "payNow": "Pay now",
+  "confirmClearCart": "Are you sure you want to clear the cart?",
+  "products4": "4 products",
+  "products8": "8 products",
+  "itemImageAlt": "Item Image",
+  "cm": "cm",
+  "currency": "pln",
+  "confirmRemoveItem": "Are you sure you want to remove the item from the cart?",
+  "figure": "figure",
+  "x": "x",
+  "S": "S",
+  "L": "L",
+  "XL": "XL",
+  "soft": "soft",
+  "hard": "hard",
+  "4gb": "4GB",
+  "8gb": "8GB",
+  "16gb": "16GB",
+  "4070": "4070",
+  "4080": "4080",
+  "4090": "4090",
+  "cherry": "cherry",
+  "sa": "SA",
+  "oem": "OEM",
+  "mechanical": "mechanical",
+  "membrane": "membrane",
+  "12": "12",
+  "12 pro": "12 pro",
+  "12 pro max": "12 pro max",
+  "The best shop for anime fans": "The best shop for anime fans",
+  "all": "All",
+  "figures": "Figures",
+  "posters": "Posters",
+  "manga": "Manga",
+  "pc": "PC",
+  "others": "Others",
+
+  "descriptions": {
+    "0": {
+      "en": "Kaguya Shinomiya figure with precise finishing details, perfect for collectors and fans of the series."
+    },
+    "1": {
+      "en": "Asuna Yuuki figure from Sword Art Online, capturing the character's iconic style and dynamic posture."
+    },
+    "2": {
+      "en": "Maomao figure, excellently detailed and colored, perfect for decorating an anime lover's room."
+    },
+    "3": {
+      "en": "Ai Hoshino figure, faithfully representing the anime character, a great addition to any collection."
+    },
+    "4": {
+      "en": "Akame figure with a dynamic pose and meticulous details, perfect for fans of the series."
+    },
+    "5": {
+      "en": "Akashi Seijuro figure, depicting the character in his iconic stance, great for collectors."
+    },
+    "6": {
+      "en": "Midorima Shintaro figure with remarkable attention to detail, a must-have in every fan's collection."
+    },
+    "7": {
+      "en": "Kise Ryota figure, perfectly capturing the character's personality, ideal for a fan's shelf."
+    },
+    "8": {
+      "en": "Aoimine Daiki figure, dynamic and full of energy, great for complementing any collection."
+    },
+    "9": {
+      "en": "Murasakibara Atsushi figure, impressive in scale and detail, perfect for fans of the series."
+    },
+    "10": {
+      "en": "Tetsuya Kuroko figure, faithfully representing the character, a great choice for any fan."
+    },
+    "11": {
+      "en": "Taiga Kagami figure with a dynamic pose and detailed finish, a must-have for collectors."
+    },
+    "12": {
+      "en": "Akeno Himejima figure, beautifully crafted and full of details, perfect for fans of the character."
+    },
+    "13": {
+      "en": "Rias Gremory figure, excellently detailed and dynamically posed, a must-have for fans."
+    },
+    "14": {
+      "en": "Asia Argento figure, subtle and detailed, perfect for any fan collection."
+    },
+    "15": {
+      "en": "Issei Hyoudou figure with a dynamic pose and excellent finish, perfect for fans of the series."
+    },
+    "16": {
+      "en": "Koneko Toujou figure, beautifully crafted with attention to every detail, a must-have in any collection."
+    },
+    "17": {
+      "en": "Kazuma Satou figure with a dynamic pose and detailed finish, perfect for collectors."
+    },
+    "18": {
+      "en": "Megumin figure, captured in her iconic pose, ideal for fans of Konosuba."
+    },
+    "19": {
+      "en": "Aqua figure, perfectly representing the anime character, a great addition to any collection."
+    },
+    "20": {
+      "en": "Darkness figure, dynamic and full of details, ideal for fans of the character."
+    },
+    "21": {
+      "en": "Cosette Schneider figure, subtle and elegant, a great decoration for any anime lover."
+    },
+    "22": {
+      "en": "Emilia figure from Re:Zero, precisely capturing the character's charm, perfect for a fan's shelf."
+    },
+    "23": {
+      "en": "Rem figure, with exceptional attention to detail, a great addition to any collection."
+    },
+    "24": {
+      "en": "Ram figure, dynamic pose and excellent craftsmanship, a must-have for fans."
+    },
+    "25": {
+      "en": "Frieren figure, beautifully crafted and faithful to the original, a great collection piece."
+    },
+    "26": {
+      "en": "Siina Mashiro figure, captured in a unique pose, perfect for anime lovers."
+    },
+    "27": {
+      "en": "Hayase Nagatoro figure with precise finishing and dynamic pose, perfect for the collection."
+    },
+    "28": {
+      "en": "Saber figure, excellently detailed and faithful to the original, a great choice for Fate fans."
+    },
+    "29": {
+      "en": "Siina Mashiro figure, beautifully crafted and full of details, ideal for any fan."
+    },
+    "30": {
+      "en": "Taiga Aisaka figure, captured in a dynamic pose, a perfect decoration for any collection."
+    },
+    "31": {
+      "en": "Tomoe figure, elegant and subtle, perfect for fans of classic characters."
+    },
+    "32": {
+      "en": "Mai Sakurajima figure, captured in her characteristic pose, perfect for fans of the series."
+    },
+    "33": {
+      "en": "DXD poster, perfect for decorating an anime fan's room. High-quality print and vibrant colors."
+    },
+    "34": {
+      "en": "Sword Art Online poster, perfect for decorating a fan's room."
+    },
+    "35": {
+      "en": "Sword Art Online poster, beautiful print and detailed design, ideal for a fan's wall."
+    },
+    "36": {
+      "en": "Anime poster, high-quality print, perfect for completing your collection."
+    },
+    "37": {
+      "en": "Asuna poster from SAO, with beautiful illustration and vibrant colors, perfect for a fan's wall."
+    },
+    "38": {
+      "en": "Maomao poster, beautifully made and ready to hang, a great choice for collectors."
+    },
+    "39": {
+      "en": "Maomao poster, a great addition to a fan's room, high-quality print and durable colors."
+    },
+    "40": {
+      "en": "Maomao poster, with beautiful illustration and durable colors, perfect for decorating a wall."
+    },
+    "41": {
+      "en": "Kaguya poster, perfect for decorating an anime fan's room, high-quality print."
+    },
+    "42": {
+      "en": "Anime poster, beautifully made, a great gift choice for a fan."
+    },
+    "43": {
+      "en": "First volume of the manga 'Love is War'. A story full of humor and emotion, perfect for fans of the series."
+    },
+    "44": {
+      "en": "Second volume of the manga 'Love is War', continuing the funny and emotional adventures of the characters."
+    },
+    "45": {
+      "en": "Third volume of the manga 'Love is War'. Another dose of humor and intrigue in the world of love games."
+    },
+    "46": {
+      "en": "First volume of the manga 'Sword Art Online'. An engaging tale of the virtual reality world."
+    },
+    "47": {
+      "en": "Second volume of the manga 'Sword Art Online', continuing the epic adventures in the world of games."
+    },
+    "48": {
+      "en": "Third volume of the manga 'Sword Art Online', more action and emotion in the world of Aincrad."
+    },
+    "49": {
+      "en": "First volume of the manga 'Frieren'. An extraordinary journey through a world of magic and adventure, full of reflection."
+    },
+    "50": {
+      "en": "Second volume of the manga 'Frieren'. Continuation of the melancholic story of a journey and self-discovery."
+    },
+    "51": {
+      "en": "Third volume of the manga 'Frieren'. Further adventures of the characters in a world full of magic and mysteries."
+    },
+    "52": {
+      "en": "High-performance RAM, perfect for upgrading your computer and increasing its speed."
+    },
+    "53": {
+      "en": "RAM with high capacity, ensures smooth operation of applications and games."
+    },
+    "54": {
+      "en": "Efficient RAM, ideal for gamers and professionals who demand high performance."
+    },
+    "55": {
+      "en": "RAM, reliable and fast, perfect for upgrading a desktop computer."
+    },
+    "56": {
+      "en": "RAM, ideal for multitasking and intensive tasks on the computer."
+    },
+    "57": {
+      "en": "Efficient RAM, ensures fast operation of the system and applications."
+    },
+    "58": {
+      "en": "RAM, perfect for intensive work on the computer, ensuring smooth operation."
+    },
+    "59": {
+      "en": "Nvidia RTX graphics card, delivering exceptional performance in games and graphic applications."
+    },
+    "60": {
+      "en": "Nvidia RTX, advanced graphics card for gamers and creators, offering incredible image quality."
+    },
+    "61": {
+      "en": "Nvidia RTX, excellent graphics card from the RTX series, perfect for gaming at the highest settings."
+    },
+    "62": {
+      "en": "Nvidia RTX, powerful graphics card for demanding users, ideal for VR and rendering."
+    },
+    "63": {
+      "en": "PC case, stylish and functional, ensuring excellent cooling and easy access to components."
+    },
+    "64": {
+      "en": "PC case, solid construction and modern design, perfect for building a high-performance computer."
+    },
+    "65": {
+      "en": "PC case, modern and spacious, excellent for gaming and professional configurations."
+    },
+    "66": {
+      "en": "PC case, elegant and functional, perfect for building a strong and aesthetically pleasing setup."
+    },
+    "67": {
+      "en": "PC case, with modern design and ample space for components, ideal for expansion."
+    },
+    "68": {
+      "en": "PC case, spacious and stylish, providing excellent conditions for high-end components."
+    },
+    "69": {
+      "en": "Keycaps set, ideal for customizing your keyboard. High-quality materials ensure durability and comfort."
+    },
+    "70": {
+      "en": "Keyboard ideal for gamers. Provides fast response time and comfort during long sessions."
+    },
+    "71": {
+      "en": "Keyboard with RGB lighting and ergonomic design, perfect for work and gaming."
+    },
+    "72": {
+      "en": "Quiet and precise keyboard, ideal for office and home. Stylish design fits any interior."
+    },
+    "73": {
+      "en": "iPhone case, provides protection against scratches and drops. Slim design, perfectly fits the device."
+    },
+    "74": {
+      "en": "iPhone case, stylish and durable, provides excellent protection and comfort."
+    },
+    "75": {
+      "en": "iPhone case, elegant and functional, protects the phone from damage."
+    },
+    "76": {
+      "en": "iPhone case, slim and lightweight design, provides full protection against scratches."
+    },
+    "77": {
+      "en": "iPhone case, provides excellent protection against drops and scratches. Stylish look."
+    },
+    "78": {
+      "en": "iPhone case, durable and stylish, perfectly fits the shape of the phone."
+    },
+    "79": {
+      "en": "iPhone case, modern design and solid protection, ideal for everyday use."
+    },
+    "80": {
+      "en": "iPhone case, elegant and durable, protects the phone from scratches and drops."
+    },
+    "81": {
+      "en": "Hoodie, made of soft material, provides comfort and warmth on cold days."
+    },
+    "82": {
+      "en": "Hoodie, stylish and comfortable, perfect for everyday wear. Provides warmth and freedom of movement."
+    },
+    "83": {
+      "en": "Hoodie, made of high-quality material, perfect for colder days."
+    },
+    "84": {
+      "en": "Hoodie, provides warmth and comfort, perfect for everyday and outdoor activities."
+    },
+    "85": {
+      "en": "Hoodie, stylish design and high-quality craftsmanship, perfect for everyday wear."
+    },
+    "86": {
+      "en": "Hoodie, comfortable and functional, perfect for any occasion, provides warmth and style."
+    },
+    "87": {
+      "en": "Hoodie, stylish and modern design, made of soft material, perfect for cold days."
+    },
+    "88": {
+      "en": "Hoodie, comfortable and warm, perfect for autumn and winter, a stylish addition to your wardrobe."
+    },
+    "89": {
+      "en": "T-shirt, made of soft cotton, perfect for everyday wear. Classic design fits any outfit."
+    },
+    "90": {
+      "en": "T-shirt, stylish and comfortable, perfect for everyday wear. High-quality material ensures comfort."
+    },
+    "91": {
+      "en": "T-shirt, made of high-quality cotton, perfect for any occasion. Simple and universal."
+    },
+    "92": {
+      "en": "T-shirt, lightweight and breathable, perfect for warm days. Classic cut fits any outfit."
+    },
+    "93": {
+      "en": "T-shirt, comfortable and stylish, made of soft cotton, perfect for everyday wear."
+    },
+    "94": {
+      "en": "T-shirt, classic design and high-quality craftsmanship, perfect for everyday wear."
+    }
+  }
 }

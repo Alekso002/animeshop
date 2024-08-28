@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const FullAnime = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [anime, setAnime] = React.useState();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -30,6 +30,11 @@ const FullAnime = () => {
     return t('pleaseWait'); // Используем перевод
   }
 
+  // Используем ключ для перевода описания
+  const translatedDescription = t(`descriptions.${anime.id}.${i18n.language}`, {
+    defaultValue: anime.description, // Используем описание по умолчанию, если перевод не найден
+  });
+
   return (
     <div className="full">
       <div className="content">
@@ -37,7 +42,7 @@ const FullAnime = () => {
           <img src={anime.imageUrl} alt={anime.title} />
         </div>
         <div className="content__details">
-          <div className="content__description">{anime.description}</div>
+          <div className="content__description">{translatedDescription}</div>
           <AnimeBlock
             id={anime.id}
             title={anime.title}

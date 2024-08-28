@@ -13,7 +13,7 @@ function Header() {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
-    setDropdownOpen(false); // Закрываем выпадающее меню после выбора языка
+    setDropdownOpen(false); // Close the dropdown after selecting a language
   };
 
   return (
@@ -24,7 +24,7 @@ function Header() {
             <img width="80" src={logoSvg} alt="Anime logo" />
             <div>
               <h1>Frieren</h1>
-              <p>{t('najlepszy sklep dla fanów anime')}</p>
+              <p>{t('The best shop for anime fans')}</p>
             </div>
           </div>
         </Link>
@@ -45,7 +45,9 @@ function Header() {
           </div>
           <div className="header__cart">
             <Link to="/cart" className="button button--cart">
-              <span>{totalPrice} zł</span>
+              <span>
+                {totalPrice} {t('currency')}
+              </span>
               <div className="button__delimiter"></div>
               <svg
                 width="18"

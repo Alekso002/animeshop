@@ -32,11 +32,350 @@
   "paymentError": "Przepraszamy, Twoja płatność nie została przetworzona.",
   "reason": "Powód",
   "backToCart": "Wróć do koszyka",
-
   "thankYouForOrder": "Dziękujemy za Twoje zamówienie! Twoja płatność została pomyślnie przetworzona.",
   "orderDetails": "Szczegóły zamówienia",
-
   "totalPrice": "Suma zamówienia",
   "orderId": "Numer zamówienia",
-  "backToHome": "Wróć na stronę główną"
+  "searchPlaceholder": "Szukaj ... ",
+  "cartEmptyTitle": "Koszyk jest pusty 😕",
+  "cartEmptyDescription": "Prawdopodobnie jeszcze nic nie wybrałeś.",
+  "cartEmptyHint": "Aby kupić produkt, przejdź na stronę główną.",
+  "backToHome": "Wróć na stronę główną",
+  "yes": "Tak",
+  "no": "Nie",
+  "sortByHighestPrice": "od najwyższej ceny",
+  "sortByLowestPrice": "od najniższej ceny",
+  "sortByNameAsc": "nazwa produktu(A - Z)",
+  "sortByNameDesc": "nazwa produktu(Z - A)",
+  "sort": "Sortuj:",
+  "cartTitle": "Koszyk",
+  "clearCart": "Wyczyść koszyk",
+  "total": "Razem",
+  "pieces": "szt.",
+  "orderTotal": "Suma zamówienia",
+  "back": "Wróć",
+  "payNow": "Zapłać teraz",
+  "confirmClearCart": "Czy na pewno chcesz wyczyścić koszyk?",
+  "products4": "4 produkty",
+  "products8": "8 produktów",
+  "itemImageAlt": "Obrazek",
+  "cm": "cm",
+  "currency": "zł",
+  "confirmRemoveItem": "Czy na pewno chcesz usunąć przedmiot z koszyka?",
+  "figure": "figurka",
+  "x": "x",
+  "S": "S",
+  "L": "L",
+  "XL": "XL",
+  "soft": "miękka",
+  "hard": "twarda",
+  "4gb": "4GB",
+  "8gb": "8GB",
+  "16gb": "16GB",
+  "4070": "4070",
+  "4080": "4080",
+  "4090": "4090",
+  "cherry": "cherry",
+  "sa": "SA",
+  "oem": "OEM",
+  "mechanical": "mechaniczna",
+  "membrane": "membranowa",
+  "12": "12",
+  "12 pro": "12 pro",
+  "12 pro max": "12 pro max",
+  "The best shop for anime fans": "Najlepszy sklep dla fanów anime",
+  "all": "Wszystko",
+  "figures": "Figurki",
+  "posters": "Plakaty",
+  "manga": "Manga",
+  "pc": "PC",
+  "others": "Inne",
+
+  "descriptions": {
+    "0": {
+      "pl": "Figurka Kaguya Shinomiya z precyzyjnym wykończeniem detali, idealna dla kolekcjonerów i fanów serii."
+    },
+    "1": {
+      "pl": "Figurka Asuny Yuuki z Sword Art Online, która uchwyca charakterystyczny styl i dynamiczną postawę bohaterki."
+    },
+    "2": {
+      "pl": "Figurka Maomao, doskonała w detalach i kolorystyce, idealna do ozdoby pokoju miłośnika anime."
+    },
+    "3": {
+      "pl": "Figurka Ai Hoshino, wiernie oddająca postać z anime, świetny dodatek do każdej kolekcji."
+    },
+    "4": {
+      "pl": "Figurka Akame z dynamiczną pozą i starannymi detalami, idealna dla fanów serii."
+    },
+    "5": {
+      "pl": "Figurka Akashi Seijuro, przedstawiająca bohatera w jego charakterystycznej postawie, doskonała dla kolekcjonerów."
+    },
+    "6": {
+      "pl": "Figurka Midorima Shintaro z niezwykłą dbałością o detale, obowiązkowa pozycja w kolekcji każdego fana."
+    },
+    "7": {
+      "pl": "Figurka Kise Ryota, perfekcyjnie oddająca osobowość postaci, idealna na półkę fana."
+    },
+    "8": {
+      "pl": "Figurka Aoimine Daiki, dynamiczna i pełna energii, świetnie uzupełnia każdą kolekcję."
+    },
+    "9": {
+      "pl": "Figurka Murasakibara Atsushi, imponująca pod względem skali i detali, doskonała dla miłośników serii."
+    },
+    "10": {
+      "pl": "Figurka Tetsuya Kuroko, wiernie oddająca charakter postaci, świetny wybór dla każdego fana."
+    },
+    "11": {
+      "pl": "Figurka Taiga Kagami, dynamiczna poza i szczegółowe wykończenie, obowiązkowy element kolekcji."
+    },
+    "12": {
+      "pl": "Figurka Akeno Himejima, pięknie wykonana i pełna detali, idealna dla miłośników postaci."
+    },
+    "13": {
+      "pl": "Figurka Rias Gremory, doskonałe oddanie szczegółów i dynamiczna poza, obowiązkowa dla fanów."
+    },
+    "14": {
+      "pl": "Figurka Asia Argento, subtelna i szczegółowa, idealna do każdej kolekcji fanowskiej."
+    },
+    "15": {
+      "pl": "Figurka Issei Hyoudou, z dynamiczną pozą i świetnym wykończeniem, doskonała dla fanów serii."
+    },
+    "16": {
+      "pl": "Figurka Koneko Toujou, pięknie wykonana z dbałością o każdy detal, obowiązkowa pozycja w kolekcji."
+    },
+    "17": {
+      "pl": "Figurka Kazuma Satou, z dynamiczną pozą i szczegółowym wykończeniem, doskonała dla kolekcjonerów."
+    },
+    "18": {
+      "pl": "Figurka Megumin, uchwycona w charakterystycznej pozie, idealna dla fanów Konosuby."
+    },
+    "19": {
+      "pl": "Figurka Aqua, doskonale oddająca postać z anime, świetny dodatek do każdej kolekcji."
+    },
+    "20": {
+      "pl": "Figurka Darkness, dynamiczna i pełna detali, idealna dla fanów postaci."
+    },
+    "21": {
+      "pl": "Figurka Cosette Schneider, subtelna i elegancka, świetna ozdoba dla każdego miłośnika anime."
+    },
+    "22": {
+      "pl": "Figurka Emilia z Re:Zero, precyzyjnie oddająca urok postaci, doskonała na półkę fana."
+    },
+    "23": {
+      "pl": "Figurka Rem, z wyjątkową dbałością o detale, świetny dodatek do każdej kolekcji."
+    },
+    "24": {
+      "pl": "Figurka Ram, dynamiczna poza i doskonałe wykonanie, obowiązkowa pozycja dla fanów."
+    },
+    "25": {
+      "pl": "Figurka Frieren, pięknie wykonana i wierna oryginałowi, świetna ozdoba kolekcji."
+    },
+    "26": {
+      "pl": "Figurka Siina Mashiro, uchwycona w wyjątkowej pozie, idealna dla miłośników anime."
+    },
+    "27": {
+      "pl": "Figurka Hayase Nagatoro, z precyzyjnym wykończeniem i dynamiczną pozą, doskonała do kolekcji."
+    },
+    "28": {
+      "pl": "Figurka Saber, doskonała w detalach i wierna oryginałowi, świetny wybór dla fanów Fate."
+    },
+    "29": {
+      "pl": "Figurka Siina Mashiro, pięknie wykonana i pełna detali, idealna dla każdego fana."
+    },
+    "30": {
+      "pl": "Figurka Taiga Aisaka, uchwycona w dynamicznej pozie, doskonała ozdoba każdej kolekcji."
+    },
+    "31": {
+      "pl": "Figurka Tomoe, elegancka i subtelna, doskonała dla fanów klasycznych postaci."
+    },
+    "32": {
+      "pl": "Figurka Mai Sakurajima, uchwycona w charakterystycznej pozie, idealna dla miłośników serii."
+    },
+    "33": {
+      "pl": "Plakat DXD, idealny do udekorowania pokoju fana anime. Wysoka jakość druku i żywe kolory."
+    },
+    "34": {
+      "pl": "Plakat Sword Art Online, doskonały do ozdobienia ścian w pokoju miłośnika anime."
+    },
+    "35": {
+      "pl": "Plakat SAO, piękny druk i szczegółowy design, idealny na ścianę każdego fana."
+    },
+    "36": {
+      "pl": "Plakat anime, wysokiej jakości druk, doskonały do uzupełnienia kolekcji."
+    },
+    "37": {
+      "pl": "Plakat Asuna z SAO, z piękną ilustracją i żywymi kolorami, idealny na ścianę fana."
+    },
+    "38": {
+      "pl": "Plakat Maomao, pięknie wykonany i gotowy do powieszenia, doskonały wybór dla kolekcjonerów."
+    },
+    "39": {
+      "pl": "Plakat Maomao, doskonały dodatek do pokoju fana, wysokiej jakości druk i trwałe kolory."
+    },
+    "40": {
+      "pl": "Plakat Maomao, z piękną ilustracją i trwałymi kolorami, idealny do udekorowania ściany."
+    },
+    "41": {
+      "pl": "Plakat Kaguya, doskonały do ozdobienia pokoju miłośnika anime, wysoka jakość druku."
+    },
+    "42": {
+      "pl": "Plakat anime , pięknie wykonany, doskonały wybór na prezent dla fana."
+    },
+    "43": {
+      "pl": "Pierwszy tom mangi 'Love is war'. Historia pełna humoru i emocji, idealna dla fanów serii."
+    },
+    "44": {
+      "pl": "Drugi tom mangi 'Love is war', kontynuacja zabawnych i emocjonujących przygód bohaterów."
+    },
+    "45": {
+      "pl": "Trzeci tom mangi 'Love is war'. Kolejna porcja humoru i intryg w świecie miłosnych rozgrywek."
+    },
+    "46": {
+      "pl": "Pierwszy tom mangi 'Sword Art Online'. Wciągająca opowieść o świecie wirtualnej rzeczywistości."
+    },
+    "47": {
+      "pl": "Drugi tom mangi 'Sword Art Online', kontynuacja epickich przygód w świecie gier."
+    },
+    "48": {
+      "pl": "Trzeci tom mangi 'Sword Art Online', jeszcze więcej akcji i emocji w świecie Aincrad."
+    },
+    "49": {
+      "pl": "Pierwszy tom mangi 'Frieren'. Niezwykła podróż po świecie magii i przygód, pełna refleksji."
+    },
+    "50": {
+      "pl": "Drugi tom mangi 'Frieren'. Kontynuacja melancholijnej opowieści o podróży i odkrywaniu siebie."
+    },
+    "51": {
+      "pl": "Trzeci tom mangi 'Frieren'. Dalsze przygody bohaterów w świecie pełnym magii i tajemnic."
+    },
+    "52": {
+      "pl": "Pamięć RAM o wysokiej wydajności, idealna do modernizacji komputera i zwiększenia jego szybkości."
+    },
+    "53": {
+      "pl": "Pamięć RAM  o dużej pojemności, zapewnia płynne działanie aplikacji i gier."
+    },
+    "54": {
+      "pl": "Wydajna pamięć RAM, idealna dla graczy i profesjonalistów wymagających wysokiej wydajności."
+    },
+    "55": {
+      "pl": "Pamięć RAM, niezawodna i szybka, doskonała do rozbudowy komputera stacjonarnego."
+    },
+    "56": {
+      "pl": "Pamięć RAM, idealna do multitaskingu i intensywnych zadań na komputerze."
+    },
+    "57": {
+      "pl": "Wydajna pamięć RAM, zapewniająca szybkie działanie systemu i aplikacji."
+    },
+    "58": {
+      "pl": "Pamięć RAM, idealna do intensywnej pracy na komputerze, zapewniająca płynność działania."
+    },
+    "59": {
+      "pl": "Karta graficzna Nvidia RTX, zapewniająca wyjątkową wydajność w grach i aplikacjach graficznych."
+    },
+    "60": {
+      "pl": "Nvidia RTX, zaawansowana karta graficzna dla graczy i twórców, oferująca niesamowitą jakość obrazu."
+    },
+    "61": {
+      "pl": "Nvidia RTX, doskonała karta graficzna z serii RTX, idealna do grania w najwyższych ustawieniach."
+    },
+    "62": {
+      "pl": "Nvidia RTX, potężna karta graficzna dla wymagających użytkowników, doskonała do VR i renderingu."
+    },
+    "63": {
+      "pl": "Obudowa PC, stylowa i funkcjonalna, zapewniająca doskonałe chłodzenie i łatwy dostęp do komponentów."
+    },
+    "64": {
+      "pl": "Obudowa PC, solidna konstrukcja i nowoczesny design, idealna do budowy wydajnego komputera."
+    },
+    "65": {
+      "pl": "Obudowa PC, nowoczesna i przestronna, doskonała do konfiguracji gamingowych i profesjonalnych."
+    },
+    "66": {
+      "pl": "Obudowa PC, elegancka i funkcjonalna, idealna do zbudowania mocnej i estetycznej konfiguracji."
+    },
+    "67": {
+      "pl": "Obudowa PC, z nowoczesnym designem i dużą ilością miejsca na komponenty, idealna do rozbudowy."
+    },
+    "68": {
+      "pl": "Obudowa PC, przestronna i stylowa, zapewnia doskonałe warunki dla komponentów high-end."
+    },
+    "69": {
+      "pl": "Zestaw keycaps, idealny do personalizacji klawiatury. Wysoka jakość materiałów zapewnia trwałość i komfort użytkowania."
+    },
+    "70": {
+      "pl": "Klawiatura idealna dla graczy. Zapewnia szybki czas reakcji i komfort podczas długich sesji."
+    },
+    "71": {
+      "pl": "Klawiatura z podświetleniem RGB i ergonomicznym designem, doskonała do pracy i gier."
+    },
+    "72": {
+      "pl": "Klawiatura cicha i precyzyjna, idealna do biura i domu. Stylowy design pasuje do każdego wnętrza."
+    },
+    "73": {
+      "pl": "Etui do iPhone 12, zapewnia ochronę przed zarysowaniami i upadkami. Smukły design, idealnie dopasowany do urządzenia."
+    },
+    "74": {
+      "pl": "Etui do iPhone 12, stylowe i trwałe, zapewnia doskonałą ochronę i wygodę użytkowania."
+    },
+    "75": {
+      "pl": "Etui do iPhone 12, eleganckie i funkcjonalne, chroni telefon przed uszkodzeniami."
+    },
+    "76": {
+      "pl": "Etui do iPhone 12, smukły i lekki design, zapewnia pełną ochronę przed zarysowaniami."
+    },
+    "77": {
+      "pl": "Etui do iPhone 12, zapewnia doskonałą ochronę przed upadkami i zarysowaniami. Stylowy wygląd."
+    },
+    "78": {
+      "pl": "Etui do iPhone 12, wytrzymałe i stylowe, idealnie dopasowane do kształtu telefonu."
+    },
+    "79": {
+      "pl": "Etui do iPhone 12, nowoczesny design i solidna ochrona, idealne do codziennego użytku."
+    },
+    "80": {
+      "pl": "Etui do iPhone 12, eleganckie i wytrzymałe, chroni telefon przed zarysowaniami i upadkami."
+    },
+    "81": {
+      "pl": "Bluza z kapturem, wykonana z miękkiego materiału, zapewnia komfort i ciepło w chłodne dni."
+    },
+    "82": {
+      "pl": "Bluza z kapturem, stylowa i wygodna, doskonała do noszenia na co dzień. Zapewnia ciepło i swobodę ruchów."
+    },
+    "83": {
+      "pl": "Bluza z kapturem, wykonana z wysokiej jakości materiału, idealna na chłodniejsze dni."
+    },
+    "84": {
+      "pl": "Bluza z kapturem, zapewnia ciepło i komfort, doskonała na co dzień i do aktywności na świeżym powietrzu."
+    },
+    "85": {
+      "pl": "Bluza z kapturem, stylowy design i wysoka jakość wykonania, idealna na co dzień."
+    },
+    "86": {
+      "pl": "Bluza z kapturem, wygodna i funkcjonalna, doskonała na każdą okazję, zapewnia ciepło i styl."
+    },
+    "87": {
+      "pl": "Bluza z kapturem, stylowy i nowoczesny design, wykonana z miękkiego materiału, idealna na chłodne dni."
+    },
+    "88": {
+      "pl": "Bluza z kapturem, wygodna i ciepła, doskonała na jesień i zimę, stylowy dodatek do garderoby."
+    },
+    "89": {
+      "pl": "T-shirt, wykonany z miękkiej bawełny, idealny na co dzień. Klasyczny design pasuje do każdej stylizacji."
+    },
+    "90": {
+      "pl": "T-shirt, stylowy i wygodny, doskonały do noszenia na co dzień. Wysoka jakość materiału zapewnia komfort."
+    },
+    "91": {
+      "pl": "T-shirt, wykonany z wysokiej jakości bawełny, doskonały na każdą okazję. Prosty i uniwersalny."
+    },
+    "92": {
+      "pl": "T-shirt, lekki i przewiewny, idealny na ciepłe dni. Klasyczny krój pasuje do każdej stylizacji."
+    },
+    "93": {
+      "pl": "T-shirt, wygodny i stylowy, wykonany z miękkiej bawełny, doskonały do noszenia na co dzień."
+    },
+    "94": {
+      "pl": "T-shirt, klasyczny design i wysoka jakość wykonania, idealny wybór na co dzień."
+    }
+  }
 }

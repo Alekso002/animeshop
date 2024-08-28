@@ -4,41 +4,40 @@ import { Link } from 'react-router-dom';
 import { addItem } from '../../redux/slices/cartSlice';
 import { useTranslation } from 'react-i18next';
 
-const typeNames = [
-  'figurka',
-  'x',
-  'S',
-  'L',
-  'XL',
-  'miękka',
-  'twarda',
-  '4gb',
-  '8gb',
-  '16gb',
-  '4070',
-  '4080',
-  '4090',
-  'cherry',
-  'sa',
-  'oem',
-  'mechanical',
-  'membrane',
-  '12',
-  '12 pro',
-  '12 pro max',
-];
-
 export function AnimeBlock({ id, title, prices, image, sizes, types, category }) {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
+  // Create an array with translations for each type
+  const typeNames = [
+    t('figure'), // figurka
+    t('x'),
+    t('S'),
+    t('L'),
+    t('XL'),
+    t('soft'), // miękka
+    t('hard'), // twarda
+    t('4gb'),
+    t('8gb'),
+    t('16gb'),
+    t('4070'),
+    t('4080'),
+    t('4090'),
+    t('cherry'),
+    t('sa'),
+    t('oem'),
+    t('mechanical'),
+    t('membrane'),
+    t('12'),
+    t('12 pro'),
+    t('12 pro max'),
+  ];
+
   const [activeType, setActiveType] = React.useState(types[0] || 0);
   const [activeSize, setActiveSize] = React.useState(0);
 
-  // Определяем текущую цену в зависимости от категории
   const currentPrice = category === 1 ? prices[activeSize] : prices[types.indexOf(activeType)];
 
-  // Приведение активного типа к строке для корректного сравнения
   const cartItem = useSelector((state) =>
     state.cart.items.find(
       (obj) =>
@@ -64,7 +63,7 @@ export function AnimeBlock({ id, title, prices, image, sizes, types, category })
     <div className="anime-block-wrapper">
       <div className="anime-block">
         <Link to={`/anime/${id}`}>
-          <img className="anime-block__image" src={image} alt="Photo" />
+          <img className="anime-block__image" src={image} alt={t('itemImageAlt')} />
           <h4 className="anime-block__title">{title}</h4>
         </Link>
         <div className="anime-block__selector">
@@ -85,14 +84,16 @@ export function AnimeBlock({ id, title, prices, image, sizes, types, category })
                   key={size}
                   onClick={() => setActiveSize(i)}
                   className={activeSize === i ? 'active' : ''}>
-                  {size} cm
+                  {size} {t('cm')}
                 </li>
               ))}
             </ul>
           )}
         </div>
         <div className="anime-block__bottom">
-          <div className="anime-block__price">{currentPrice} zł</div>
+          <div className="anime-block__price">
+            {currentPrice} {t('currency')}
+          </div>
           <button onClick={onClickAdd} className="button button--outline button--add">
             <svg
               width="12"

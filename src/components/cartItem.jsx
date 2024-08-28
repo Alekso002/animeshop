@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { addItem, minusItem, removeItem } from '../redux/slices/cartSlice';
 import { useDispatch } from 'react-redux';
 import CustomPopup from './CustomPopup';
+import { useTranslation } from 'react-i18next';
 
 const CartItem = ({ id, title, type, size, price, count, image }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const [isPopupVisible, setPopupVisible] = useState(false);
 
   const onClickPlus = () => {
@@ -41,13 +43,17 @@ const CartItem = ({ id, title, type, size, price, count, image }) => {
   return (
     <div className="cart__item">
       <div className="cart__item-img">
-        <img className="anime-block__image" src={image} alt="" />
+        <img className="anime-block__image" src={image} alt={t('itemImageAlt')} />
       </div>
       <div className="cart__item-info">
         <h3>{title}</h3>
         <p>
           {type && <p>{type}</p>}
-          {size && <p> {size} cm</p>}
+          {size && (
+            <p>
+              {size} {t('cm')}
+            </p>
+          )}
         </p>
       </div>
       <div className="cart__item-count">
@@ -92,7 +98,9 @@ const CartItem = ({ id, title, type, size, price, count, image }) => {
         </div>
       </div>
       <div className="cart__item-price">
-        <b>{price * count} zł</b>
+        <b>
+          {price * count} {t('currency')}
+        </b>
       </div>
       <div className="cart__item-remove">
         <div onClick={onClickRemove} className="button button--outline button--circle">
@@ -115,7 +123,7 @@ const CartItem = ({ id, title, type, size, price, count, image }) => {
       </div>
       {isPopupVisible && (
         <CustomPopup
-          message="Czy na pewno chcesz usunąć przedmiot z koszyka?"
+          message={t('confirmRemoveItem')}
           onConfirm={handleConfirmRemove}
           onCancel={handleCancelRemove}
         />

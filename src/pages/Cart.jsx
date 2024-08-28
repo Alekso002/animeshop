@@ -6,8 +6,9 @@ import { clearItem } from '../redux/slices/cartSlice';
 import CartEmpty from '../components/CartEmpty';
 import CustomPopup from '../components/CustomPopup';
 import OrderForm from '../components/Order/OrderForm';
-import OrderConfirmationWrapper from '../components/Order/OrderConfirmation'; // Импорт компонента подтверждения заказа
+import OrderConfirmationWrapper from '../components/Order/OrderConfirmation';
 import { loadStripe } from '@stripe/stripe-js';
+import { useTranslation } from 'react-i18next';
 
 const stripePromise = loadStripe(
   'pk_test_51Ps1EDLbvPIbSoGb6oA3bOZsesuRqhs2AX7azAu8WDigjjvrHxiSLeDcmzfTKdb9jg3ZxhcoSAJeMLvTGDPo0IDf00VvJCvl8O',
@@ -15,6 +16,7 @@ const stripePromise = loadStripe(
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
   const { totalPrice, items } = useSelector((state) => state.cart);
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [isOrderFormVisible, setOrderFormVisible] = useState(false);
@@ -105,7 +107,7 @@ const Cart = () => {
               xmlns="http://www.w3.org/2000/svg">
               {/* SVG Path */}
             </svg>
-            Koszyk
+            {t('cartTitle')}
           </h2>
           <div onClick={onClickClear} className="cart__clear">
             <svg
@@ -116,7 +118,7 @@ const Cart = () => {
               xmlns="http://www.w3.org/2000/svg">
               {/* SVG Path */}
             </svg>
-            <span>Wyczyść koszyk</span>
+            <span>{t('clearCart')}</span>
           </div>
         </div>
         <div className="content__items">
@@ -128,12 +130,15 @@ const Cart = () => {
           <div className="cart__bottom-details">
             <div className="left">
               <span>
-                Razem: <b>{totalCount} szt.</b>
+                {t('total')}:{' '}
+                <b>
+                  {totalCount} {t('pieces')}
+                </b>
               </span>
             </div>
             <div className="right">
               <span>
-                Suma zamówienia: <b>{totalPrice} zł</b>
+                {t('orderTotal')}: <b>{totalPrice} zł</b>
               </span>
             </div>
           </div>
@@ -148,17 +153,17 @@ const Cart = () => {
                 {/* SVG Path */}
               </svg>
 
-              <span>Wróć</span>
+              <span>{t('back')}</span>
             </Link>
             <div className="button pay-btn" onClick={() => setOrderFormVisible(true)}>
-              <span>Zapłać teraz</span>
+              <span>{t('payNow')}</span>
             </div>
           </div>
         </div>
       </div>
       {isPopupVisible && (
         <CustomPopup
-          message="Czy na pewno chcesz wyczyścić koszyk?"
+          message={t('confirmClearCart')}
           onConfirm={handleConfirmClear}
           onCancel={handleCancelClear}
         />

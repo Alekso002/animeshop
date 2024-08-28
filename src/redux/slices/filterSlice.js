@@ -4,8 +4,7 @@ const initialState = {
   categoryId: 0,
   currentPage: 1,
   sort: {
-    name: 'od najwyższej ceny',
-    sortProperty: 'rating',
+    sortProperty: 'price', // Store only the sort property here
   },
 };
 

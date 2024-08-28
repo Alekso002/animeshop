@@ -1,10 +1,10 @@
 import React from 'react';
-
+import { useTranslation } from 'react-i18next';
 import { SearchContext } from '../../App';
-
 import styles from './Search.module.scss';
 
 const Search = () => {
+  const { t } = useTranslation();
   const { searchValue, setSearchValue } = React.useContext(SearchContext);
 
   return (
@@ -28,7 +28,7 @@ const Search = () => {
         value={searchValue}
         onChange={(event) => setSearchValue(event.target.value)}
         className={styles.input}
-        placeholder="Szukaj ..."
+        placeholder={t('searchPlaceholder')} // Используем локализацию для placeholder
       />
       {searchValue && (
         <svg
