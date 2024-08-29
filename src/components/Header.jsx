@@ -39,6 +39,7 @@ function Header() {
               <div className="dropdown">
                 <button onClick={() => changeLanguage('pl')}>PL</button>
                 <button onClick={() => changeLanguage('en')}>EN</button>
+                <button onClick={() => changeLanguage('ua')}>UA</button>
                 <button onClick={() => changeLanguage('ru')}>RU</button>
               </div>
             )}
