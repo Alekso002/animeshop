@@ -1,0 +1,63 @@
+.pagination-separator {
+  border: 1px solid #ddd;
+}
+
+/* Stylizacja stopki */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-section h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-section p {
+  margin-top: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.footer-socials a {
+  text-decoration: none;
+  margin-right: 10px;
+  color: #000;
+}
+
+.footer-socials a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-text {
+  font-size: 14px;
+  margin-top: 20px;
+}

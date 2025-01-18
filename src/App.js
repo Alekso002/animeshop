@@ -3,14 +3,15 @@ import './App.css';
 import './scss/app.scss';
 
 import Header from './components/Header';
+import Footer from './components/Footer'; // Już zaimportowany
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import FullAnime from './components/FullAnime';
-import OrderSuccess from './components/Order/OrderSuccess'; // Импортируйте новый компонент
+import OrderSuccess from './components/Order/OrderSuccess';
 import { Routes, Route } from 'react-router-dom';
 
-import './i18n'; // Импортируйте i18n
+import './i18n'; // Import i18n
 
 export const SearchContext = React.createContext();
 
@@ -32,6 +33,9 @@ function App() {
             </Routes>
           </div>
         </div>
+        {/* Dodanie stopki tutaj */}
+        <div class="pagination-separator"></div>
+        <Footer />
       </SearchContext.Provider>
     </div>
   );
