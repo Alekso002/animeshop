@@ -24,7 +24,11 @@
   "pay": "Opłać",
   "edit": "Edytuj",
   "cancel": "Anuluj",
+<<<<<<< HEAD
   "orderForm": "Formularz dostawy ",
+=======
+  "orderForm": "Formularz dostawy",
+>>>>>>> b6b01499a5e5bcbcc4c666b4125cbee65b473a69
   "confirmOrder": "Potwierdź zamówienie",
   "phone": "Numer Telefonu",
   "noOrderData": "Brak danych o zamówieniu.",
